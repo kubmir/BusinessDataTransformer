@@ -60,6 +60,6 @@ namespace BusinessDataTransformer.Model
             => datePart.Length == 1 ? $"0{datePart}" : datePart;
 
         public override string ToString()
-            => $"Company {Name} with ICO {ICO} valid from {FromTime:dd.MM.yyyy} to {ToTime:dd.MM.yyyy}";
+            => $"Company {Name} with owner {CountryOfOwner}-{OwnerShare} valid from {FromTime:dd.MM.yyyy} to {ToTime:dd.MM.yyyy}";
     }
 }

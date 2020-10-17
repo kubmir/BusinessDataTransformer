@@ -8,5 +8,6 @@
   <ItemGroup>
     <Folder Include="FileService\" />
     <Folder Include="Model\" />
+    <Folder Include="DateProcessor\" />
   </ItemGroup>
 </Project>
