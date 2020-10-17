@@ -9,5 +9,6 @@
     <Folder Include="FileService\" />
     <Folder Include="Model\" />
     <Folder Include="DateProcessor\" />
+    <Folder Include="DataAggregator\" />
   </ItemGroup>
 </Project>
