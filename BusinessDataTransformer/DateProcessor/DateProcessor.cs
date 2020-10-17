@@ -26,6 +26,7 @@ namespace BusinessDataTransformer.Processors
                     resultList.Add(
                         new BusinessDataItem
                         {
+                            OwnerId = businessDataItem.OwnerId,
                             ICO = businessDataItem.ICO,
                             Name = businessDataItem.Name,
                             OwnerCountrySign = businessDataItem.OwnerCountrySign,

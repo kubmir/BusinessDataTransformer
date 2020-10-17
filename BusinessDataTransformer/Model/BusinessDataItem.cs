@@ -5,6 +5,7 @@ namespace BusinessDataTransformer.Model
 {
     public class BusinessDataItem
     {
+        public string OwnerId { get; set; }
         public string ICO { get; set; }
         public string Name { get; set; }
         public string LegalFormOfOwner { get; set; }
@@ -22,6 +23,7 @@ namespace BusinessDataTransformer.Model
 
             return new BusinessDataItem
             {
+                OwnerId = Guid.NewGuid().ToString(),
                 ICO = values[0],
                 Name = values[1].Replace('"', ' ').Trim(),
                 LegalFormOfOwner = values[2],
@@ -60,6 +62,6 @@ namespace BusinessDataTransformer.Model
             => datePart.Length == 1 ? $"0{datePart}" : datePart;
 
         public override string ToString()
-            => $"Company {Name} with owner {CountryOfOwner}-{OwnerShare} valid from {FromTime:dd.MM.yyyy} to {ToTime:dd.MM.yyyy}";
+            => $"Company {Name} with owner {OwnerId} valid from {FromTime:dd.MM.yyyy} to {ToTime:dd.MM.yyyy}";
     }
 }
