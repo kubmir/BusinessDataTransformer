@@ -24,7 +24,9 @@ namespace BusinessDataTransformer.Aggregators
                                 OwnerCountrySign = companyByYearAndOwner.OwnerCountrySign,
                                 OwnerShare = companyByYearAndOwner.OwnerShare,
                                 OwnerType = companyByYearAndOwner.OwnerType,
-                                LegalFormOfOwner = companyByYearAndOwner.LegalFormOfOwner,
+                                LegalFormOfOwner = String.IsNullOrEmpty(companyByYearAndOwner.LegalFormOfOwner)
+                                    ? companyByYearAndOwner.OwnerType
+                                    : companyByYearAndOwner.LegalFormOfOwner,
                                 FromTime = companyByYearAndOwner.FromTime,
                                 ToTime = companyByYearAndOwner.ToTime,
                             };

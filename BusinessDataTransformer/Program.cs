@@ -14,6 +14,7 @@ namespace BusinessDataTransformer
             var dataLoader = new CsvDataLoader();
             var dateProcessor = new DateProcessor();
             var dataAggregator = new DataAggregator();
+            var dataExporter = new CsvDataExporter();
 
             var result = dataLoader.LoadDataFromFile("/Users/miroslavkubus/Desktop/owners.csv");
 
@@ -22,7 +23,9 @@ namespace BusinessDataTransformer
 
             List<CompanyOutputData> ownersInfo = dataAggregator.AggregateDataByCompany(parsedBusinessData);
 
-            ownersInfo.ForEach(res => Console.WriteLine(res));
+            dataExporter.ExportDataToCsv(ownersInfo);
+
+            Console.WriteLine("Transformation finished");
         }
     }
 }
