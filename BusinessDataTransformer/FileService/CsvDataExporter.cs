@@ -15,6 +15,7 @@ namespace BusinessDataTransformer.FileService
         public void ExportDataToCsv(List<CompanyOutputData> companiesData)
         {
             var fileHeader = GenerateCsvHeader();
+            var documents = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
             using (StreamWriter file = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "/Diplomovka_ESF/BusinessDataTransformed_big.csv", false))
             {
@@ -78,6 +79,12 @@ namespace BusinessDataTransformer.FileService
 
                     foreach (var owner in ownerData)
                     {
+                        // Remove companies (from result csv) with not numeric owner share
+                        if (!double.TryParse(owner.OwnerShare, out _))
+                        {
+                            return null;
+                        }
+
                         companyDataByYears += $"{owner.LegalFormOfOwner};{owner.CountryOfOwner};{owner.OwnerCountrySign};{owner.OwnerShare};{owner.OwnerType};";
                     }
 
