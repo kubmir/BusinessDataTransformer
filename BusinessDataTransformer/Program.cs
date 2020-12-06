@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Text;
 using BusinessDataTransformer.Aggregators;
 using BusinessDataTransformer.FileService;
 using BusinessDataTransformer.Model;
@@ -15,8 +17,8 @@ namespace BusinessDataTransformer
             var dateProcessor = new DateProcessor();
             var dataAggregator = new DataAggregator();
             var dataExporter = new CsvDataExporter();
-
-            var result = dataLoader.LoadDataFromFile("/Users/miroslavkubus/Desktop/owners.csv");
+            var desktopFolder = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+            var result = dataLoader.LoadDataFromFile(desktopFolder + "/Diplomovka_ESF/10000_init.csv");
 
             List<BusinessDataItem> parsedBusinessData = new List<BusinessDataItem>();
             result.ForEach(res => parsedBusinessData.AddRange(dateProcessor.SplitBusinessDataByYear(res)));

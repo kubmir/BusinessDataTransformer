@@ -47,7 +47,9 @@ namespace BusinessDataTransformer.Model
                 {
                     string day = PrepareValidDatePart(dateParts[0]);
                     string month = PrepareValidDatePart(dateParts[1]);
-                    string year = dateParts[2].StartsWith('9') ? $"19{dateParts[2]}" : $"20{dateParts[2]}";
+                    string year = dateParts[2].Length == 4
+                        ? dateParts[2]
+                        : dateParts[2].StartsWith('9') ? $"19{dateParts[2]}" : $"20{dateParts[2]}";
 
                     return DateTime.ParseExact($"{day}.{month}.{year}", "dd.MM.yyyy", CultureInfo.CreateSpecificCulture("cs-CZ"));
                 }

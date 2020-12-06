@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using BusinessDataTransformer.Model;
 
 namespace BusinessDataTransformer.FileService
@@ -14,7 +16,7 @@ namespace BusinessDataTransformer.FileService
         {
             var fileHeader = GenerateCsvHeader();
 
-            using (StreamWriter file = new StreamWriter("BusinessDataTransformed.csv"))
+            using (StreamWriter file = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "/Diplomovka_ESF/BusinessDataTransformed_big.csv", false))
             {
                 file.WriteLine(fileHeader);
 
