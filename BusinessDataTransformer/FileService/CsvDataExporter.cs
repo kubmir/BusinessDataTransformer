@@ -15,9 +15,8 @@ namespace BusinessDataTransformer.FileService
         public void ExportDataToCsv(List<CompanyOutputData> companiesData)
         {
             var fileHeader = GenerateCsvHeader();
-            var documents = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
-            using (StreamWriter file = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "/Diplomovka_ESF/BusinessDataTransformed_big.csv", false))
+            using (StreamWriter file = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "/Diplomovka_ESF/BusinessDataTransformed_big.csv", false, Encoding.UTF8))
             {
                 file.WriteLine(fileHeader);
 

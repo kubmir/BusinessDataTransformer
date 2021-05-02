@@ -2,6 +2,7 @@
 using System.IO;
 using BusinessDataTransformer.Model;
 using System.Collections.Generic;
+using System.Text;
 
 namespace BusinessDataTransformer.FileService
 {
@@ -9,7 +10,7 @@ namespace BusinessDataTransformer.FileService
     {
 
         public List<BusinessDataItem> LoadDataFromFile(string filePath)
-            => File.ReadAllLines(filePath)
+            => File.ReadAllLines(filePath, Encoding.UTF8)
                    .Skip(1)
                    .Select(value => BusinessDataItem.FromCsv(value))
                    .ToList();
