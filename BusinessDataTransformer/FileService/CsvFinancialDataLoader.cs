@@ -12,13 +12,41 @@ namespace BusinessDataTransformer.FileService
      */
     public class CsvFinancialDataLoader
     {
+        int i = 0;
+
         public List<String> LoadFinancialDataOfCompany(List<String> icosInDataset, String pathToFile)
         {
-            return File.ReadAllLines(pathToFile, Encoding.UTF8)
-                       .Where(value => icosInDataset.Contains(value.Split(';')[0]))
-                       .Select(value => value.Split(';')[0])
-                       .Distinct()
-                       .ToList();
+            var allLines = File.ReadAllLines(pathToFile, Encoding.UTF8);
+            Console.WriteLine("All lines count " + allLines.Length);
+
+
+            return allLines
+                    .Where(value => {
+                        var data = value.Split(';');
+
+                        i++;
+                        if (i % 1000 == 0)
+                            Console.WriteLine("Processing financial data row " + i);
+
+                        if (data.Length < 3)
+                        {
+                            return false;
+                        }
+
+                        var yearNumber = 0;
+                        int.TryParse(data[2], out yearNumber);
+
+                        if (yearNumber > 2011)
+                        {
+                            return icosInDataset.Contains(value.Split(';')[0]);
+
+                        }
+
+                        return false;
+                    })
+                    .Select(value => value.Split(';')[0])
+                    .Distinct()
+                    .ToList();
         }
     }
 }
