@@ -9,6 +9,7 @@ namespace BusinessDataTransformer.Model
         public string Name { get; set; }
 
         public Dictionary<int, List<OwnerInfo>> OwnersByYears { get; set; }
+        public FinancialResultsDataItem FinancialResults { get; set; }
 
         public override string ToString()
         {

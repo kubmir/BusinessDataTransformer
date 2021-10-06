@@ -21,7 +21,7 @@ namespace BusinessDataTransformer.Processors
 
             for (int i = startYear; i <= endYear; i++)
             {
-                if (i >= 2000)
+                if (i >= 2011)
                 {
                     resultList.Add(
                         new BusinessDataItem

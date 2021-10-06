@@ -9,14 +9,14 @@ namespace BusinessDataTransformer.FileService
     public class CsvDataExporter
     {
         private const int COUNT_OF_TOP_OWNERS = 3;
-        private const int START_YEAR = 2011;
-        private const int END_YEAR = 2015;
+        private const int START_YEAR = 2012;
+        private const int END_YEAR = 2014;
 
         public void ExportDataToCsv(List<CompanyOutputData> companiesData)
         {
             var fileHeader = GenerateCsvHeader();
 
-            using (StreamWriter file = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "/Diplomovka_ESF/BusinessDataTransformed_big.csv", false, Encoding.UTF8))
+            using (StreamWriter file = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "/Diplomovka_ESF/test.csv", false, Encoding.UTF8))
             {
                 file.WriteLine(fileHeader);
 
@@ -48,6 +48,8 @@ namespace BusinessDataTransformer.FileService
                         $"{currentYear}-{countOfOwner}.Majitel-Krajina;{currentYear}-{countOfOwner}.Majitel-KrajinaPriznak;" +
                         $"{currentYear}-{countOfOwner}.Majitel-Podiel;{currentYear}-{countOfOwner}.Majitel-Typ;";
                 }
+
+                companyDataByYearsHeader += $"Assets{currentYear};Equity{currentYear};Ebit{currentYear};ROA{currentYear};ROE{currentYear};";
             }
 
             return $"{basicCompanyInfoHeader};{companyDataByYearsHeader}";
@@ -58,6 +60,18 @@ namespace BusinessDataTransformer.FileService
             var basicCompanyInfo = $"{companyData.ICO};{companyData.Name}";
 
             var companyDataByYears = "";
+
+            if (companyData.FinancialResults == null ||
+                (companyData.FinancialResults?.Roa2012 == 0
+                    && companyData.FinancialResults?.Roa2013 == 0
+                    && companyData.FinancialResults?.Roa2014 == 0
+                    && companyData.FinancialResults?.Roe2012 == 0
+                    && companyData.FinancialResults?.Roe2013 == 0
+                    && companyData.FinancialResults?.Roe2014 == 0)
+            )
+            {
+                return null;
+            }
 
             for (int currentYear = START_YEAR; currentYear <= END_YEAR; currentYear++)
             {
@@ -73,7 +87,7 @@ namespace BusinessDataTransformer.FileService
 
                     var ownersCount = companyData.OwnersByYears[currentYear].Count;
                     var ownerData = ownersCount > COUNT_OF_TOP_OWNERS
-                        ? companyData.OwnersByYears[currentYear].GetRange(0, COUNT_OF_TOP_OWNERS - 1)
+                        ? companyData.OwnersByYears[currentYear].GetRange(0, COUNT_OF_TOP_OWNERS)
                         : companyData.OwnersByYears[currentYear];
 
                     foreach (var owner in ownerData)
@@ -95,6 +109,21 @@ namespace BusinessDataTransformer.FileService
                         {
                             companyDataByYears += ";;;;;";
                         }
+                    }
+
+                    if (currentYear == 2012)
+                    {
+                        companyDataByYears += $"{companyData.FinancialResults?.Assets2012};{companyData.FinancialResults?.Equity2012};{companyData.FinancialResults?.Ebit2012};{companyData.FinancialResults?.Roa2012.ToString("N4")};{companyData.FinancialResults?.Roe2012.ToString("N4")};";
+                    }
+
+                    if (currentYear == 2013)
+                    {
+                        companyDataByYears += $"{companyData.FinancialResults?.Assets2013};{companyData.FinancialResults?.Equity2013};{companyData.FinancialResults?.Ebit2013};{companyData.FinancialResults?.Roa2013.ToString("N4")};{companyData.FinancialResults?.Roe2013.ToString("N4")};";
+                    }
+
+                    if (currentYear == 2014)
+                    {
+                        companyDataByYears += $"{companyData.FinancialResults?.Assets2014};{companyData.FinancialResults?.Equity2014};{companyData.FinancialResults?.Ebit2014};{companyData.FinancialResults?.Roa2014.ToString("N4")};{companyData.FinancialResults?.Roe2014.ToString("N4")};";
                     }
                 }
             }

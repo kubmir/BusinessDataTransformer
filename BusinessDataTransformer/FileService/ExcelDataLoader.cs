@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using OfficeOpenXml;
 using System.Linq;
+using BusinessDataTransformer.Model;
 
 namespace BusinessDataTransformer.FileService
 {
@@ -17,15 +18,16 @@ namespace BusinessDataTransformer.FileService
 
         }
 
-        public List<String> LoadFinancialDataOfCompany(List<String> icosInDataset, String pathToFile)
+        public List<FinancialResultsDataItem> LoadFinancialDataOfCompany(List<String> icosInDataset, String pathToFile)
         {
-            var companiesToReturn = new List<string>();
+            var financialData = new List<FinancialResultsDataItem>();
 
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
             using (var package = new ExcelPackage(new FileInfo(pathToFile)))
             {
                 ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
+                var colCount = worksheet.Dimension.End.Column;
 
                 for (int row = 1; row <= worksheet.Dimension.End.Row; row++)
                 {
@@ -33,15 +35,19 @@ namespace BusinessDataTransformer.FileService
                         Console.WriteLine("Processing row" + row);
                     }
 
-                    if (icosInDataset.Contains(worksheet.Cells[row, 1].Value.ToString()))
+                    var currentIco = worksheet.Cells[row, 1].Value.ToString();
+                    var currentIcoInDataSetIndex = icosInDataset.IndexOf(currentIco);
+                  
+                    if (currentIcoInDataSetIndex != -1)
                     {
-                        companiesToReturn.Add(worksheet.Cells[row, 1].Value.ToString());
+                        icosInDataset.RemoveAt(currentIcoInDataSetIndex);
+                        financialData.Add(FinancialResultsDataItem.FromExcel(worksheet.Cells[row, 1, row, colCount].ToText()));
                     }
                 }
 
             }
 
-            return companiesToReturn.Distinct().OrderBy(val => val).ToList();
+            return financialData;
         }
     }
 }
