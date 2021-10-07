@@ -30,6 +30,7 @@ def main():
 
     plt.ylim(top=800, bottom=0)
 
+    plt.savefig(os.path.expanduser("~/Desktop/Diplomovka_ESF/outputs/histogram_normality.png"))
     plt.show()
 
 if __name__ == "__main__":
