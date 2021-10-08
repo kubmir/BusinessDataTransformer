@@ -138,7 +138,7 @@ namespace BusinessDataTransformer.FileService
 
         private string GetStringOfFinancialValue(double value)
         {
-            if (value == 0)
+            if (value == 0 || value == double.MaxValue)
             {
                 return "";
             } else

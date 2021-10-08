@@ -47,12 +47,12 @@ namespace BusinessDataTransformer.Model
                 Ebit2012 = Ebit2012,
                 Ebit2013 = Ebit2013,
                 Ebit2014 = Ebit2014,
-                Roa2012 = Assets2012 == 0.00 ? Assets2012 : Ebit2012 / Assets2012,
-                Roa2013 = Assets2013 == 0.00 ? Assets2013 : Ebit2013 / Assets2013,
-                Roa2014 = Assets2014 == 0.00 ? Assets2014 : Ebit2014 / Assets2014,
-                Roe2012 = Equity2012 == 0.00 ? Equity2012 : Ebit2012 / Equity2012,
-                Roe2013 = Equity2013 == 0.00 ? Equity2013 : Ebit2013 / Equity2013,
-                Roe2014 = Equity2014 == 0.00 ? Equity2014 : Ebit2014 / Equity2014,
+                Roa2012 = Assets2012 == 0.00 ? double.MaxValue : Ebit2012 / Assets2012,
+                Roa2013 = Assets2013 == 0.00 ? double.MaxValue : Ebit2013 / Assets2013,
+                Roa2014 = Assets2014 == 0.00 ? double.MaxValue : Ebit2014 / Assets2014,
+                Roe2012 = Equity2012 <= 0.00 ? double.MaxValue : Ebit2012 / Equity2012,
+                Roe2013 = Equity2013 <= 0.00 ? double.MaxValue : Ebit2013 / Equity2013,
+                Roe2014 = Equity2014 <= 0.00 ? double.MaxValue : Ebit2014 / Equity2014,
             };
         }
 
