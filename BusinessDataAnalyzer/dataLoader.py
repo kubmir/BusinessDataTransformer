@@ -6,6 +6,7 @@ def filterInvalidData(df, currentAnalyzedCol):
     analyzedFinancialValue = df[currentAnalyzedCol].apply(pd.to_numeric, errors='coerce').dropna()
 
     # zero represents missing data
+    # analyzedFinancialValueWithoutZeros = analyzedFinancialValue[(analyzedFinancialValue!=0) & (analyzedFinancialValue>-3) & (analyzedFinancialValue<3)]
     analyzedFinancialValueWithoutZeros = analyzedFinancialValue[analyzedFinancialValue!=0]
 
     return analyzedFinancialValueWithoutZeros

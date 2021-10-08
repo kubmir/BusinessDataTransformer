@@ -15,7 +15,6 @@ def executeStandardNormalityTest(filteredAnalyzedData):
     alpha = 0.05
     k2, p = stats.normaltest(filteredAnalyzedData)
 
-    print(p)
     if p < alpha:  # null hypothesis: x comes from a normal distribution
         print("X comes from a normal distribution can be rejected")
     else:
