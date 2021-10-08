@@ -1,22 +1,17 @@
 import os
-import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
+from dataLoader import filterInvalidData, loadDataFramesFromFile
+
 def generateHistogram(df, currentAnalyzedCol, axs, row, col, sampleSize):
-    # remove nan and text values
-    analyzedFinancialValue = df[currentAnalyzedCol].apply(pd.to_numeric, errors='coerce').dropna()
+    filteredAnalyzedData = filterInvalidData(df, currentAnalyzedCol)
 
-    # zero represents missing data
-    analyzedFinancialValueWithoutZeros = analyzedFinancialValue[analyzedFinancialValue!=0]
-
-    axs[row, col].hist(analyzedFinancialValueWithoutZeros, bins=np.arange(-3, 3, sampleSize))
+    axs[row, col].hist(filteredAnalyzedData, bins=np.arange(-3, 3, sampleSize))
     axs[row, col].title.set_text(currentAnalyzedCol)
 
-
 def main():
-    col_list = ["ROA2012", "ROA2013", "ROA2014", "ROE2012", "ROE2013", "ROE2014"]
-    df = pd.read_csv(os.path.expanduser("~/Desktop/Diplomovka_ESF/final_output.csv"), usecols=col_list, delimiter=';', encoding='utf8')
+    df = loadDataFramesFromFile()
 
     fig, axs = plt.subplots(2, 3, sharey=True, tight_layout=True)
 
