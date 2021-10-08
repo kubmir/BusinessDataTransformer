@@ -22,8 +22,8 @@ namespace BusinessDataTransformer
 
             Console.WriteLine("Loading data...");
             var desktopFolder = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-            // var result = dataLoader.LoadDataFromFile(desktopFolder + "/Data_DP/complet/Vlastnici_all.csv");
-            var result = dataLoader.LoadDataFromFile(desktopFolder + "/Diplomovka_ESF/owners_issue.csv");
+            var result = dataLoader.LoadDataFromFile(desktopFolder + "/Data_DP/complet/Vlastnici_all.csv");
+            // var result = dataLoader.LoadDataFromFile(desktopFolder + "/Diplomovka_ESF/owners_issue.csv");
 
             Console.WriteLine("Spliting data by year...");
             List<BusinessDataItem> parsedBusinessData = new List<BusinessDataItem>();

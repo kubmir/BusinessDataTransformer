@@ -13,6 +13,23 @@ def filterInvalidData(df, currentAnalyzedCol):
 
 def loadDataFramesFromFile():
     col_list = ["ROA2012", "ROA2013", "ROA2014", "ROE2012", "ROE2013", "ROE2014"]
-    df = pd.read_csv(os.path.expanduser("~/Desktop/Diplomovka_ESF/final_output.csv"), usecols=col_list, delimiter=';', encoding='utf8')
+    df = pd.read_csv(os.path.expanduser("~/Desktop/Diplomovka_ESF/final_v2.csv"), usecols=col_list, delimiter=';', encoding='utf8', dtype=float)
+    # df = pd.read_csv(os.path.expanduser("~/Desktop/Diplomovka_ESF/test.csv"), usecols=col_list, delimiter=';', encoding='utf8', dtype=float)
+
+    print(df)
+    return df
+
+def loadDataForOwnerTest(year):
+    col_list = [
+        "{}-1.Majitel-KrajinaPriznak".format(year),
+        "{}-1.Majitel-Podiel".format(year),
+        "{}-2.Majitel-KrajinaPriznak".format(year),
+        "{}-2.Majitel-Podiel".format(year),
+        "{}-3.Majitel-KrajinaPriznak".format(year),
+        "{}-3.Majitel-Podiel".format(year),
+        "ROA{}".format(year)
+    ]
+
+    df = pd.read_csv(os.path.expanduser("~/Desktop/Diplomovka_ESF/final_v2.csv"), usecols=col_list, delimiter=';', encoding='utf8')
 
     return df

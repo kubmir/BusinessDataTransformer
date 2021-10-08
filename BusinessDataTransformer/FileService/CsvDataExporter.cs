@@ -16,7 +16,7 @@ namespace BusinessDataTransformer.FileService
         {
             var fileHeader = GenerateCsvHeader();
 
-            using (StreamWriter file = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "/Diplomovka_ESF/test.csv", false, Encoding.UTF8))
+            using (StreamWriter file = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "/Diplomovka_ESF/final_v2.csv", false, Encoding.UTF8))
             {
                 file.WriteLine(fileHeader);
 
@@ -113,17 +113,17 @@ namespace BusinessDataTransformer.FileService
 
                     if (currentYear == 2012)
                     {
-                        companyDataByYears += $"{companyData.FinancialResults?.Assets2012};{companyData.FinancialResults?.Equity2012};{companyData.FinancialResults?.Ebit2012};{companyData.FinancialResults?.Roa2012.ToString("N4")};{companyData.FinancialResults?.Roe2012.ToString("N4")};";
+                        companyDataByYears += $"{companyData.FinancialResults?.Assets2012};{companyData.FinancialResults?.Equity2012};{companyData.FinancialResults?.Ebit2012};{GetStringOfFinancialValue(companyData.FinancialResults.Roa2012)};{GetStringOfFinancialValue(companyData.FinancialResults.Roe2012)};";
                     }
 
                     if (currentYear == 2013)
                     {
-                        companyDataByYears += $"{companyData.FinancialResults?.Assets2013};{companyData.FinancialResults?.Equity2013};{companyData.FinancialResults?.Ebit2013};{companyData.FinancialResults?.Roa2013.ToString("N4")};{companyData.FinancialResults?.Roe2013.ToString("N4")};";
+                        companyDataByYears += $"{companyData.FinancialResults?.Assets2013};{companyData.FinancialResults?.Equity2013};{companyData.FinancialResults?.Ebit2013};{GetStringOfFinancialValue(companyData.FinancialResults.Roa2013)};{GetStringOfFinancialValue(companyData.FinancialResults.Roe2013)};";
                     }
 
                     if (currentYear == 2014)
                     {
-                        companyDataByYears += $"{companyData.FinancialResults?.Assets2014};{companyData.FinancialResults?.Equity2014};{companyData.FinancialResults?.Ebit2014};{companyData.FinancialResults?.Roa2014.ToString("N4")};{companyData.FinancialResults?.Roe2014.ToString("N4")};";
+                        companyDataByYears += $"{companyData.FinancialResults?.Assets2014};{companyData.FinancialResults?.Equity2014};{companyData.FinancialResults?.Ebit2014};{GetStringOfFinancialValue(companyData.FinancialResults.Roa2014)};{GetStringOfFinancialValue(companyData.FinancialResults.Roe2014)};";
                     }
                 }
             }
@@ -134,6 +134,17 @@ namespace BusinessDataTransformer.FileService
             }
 
             return $"{basicCompanyInfo};{companyDataByYears}";
+        }
+
+        private string GetStringOfFinancialValue(double value)
+        {
+            if (value == 0)
+            {
+                return "";
+            } else
+            {
+                return value.ToString("F4");
+            }
         }
     }
 }
