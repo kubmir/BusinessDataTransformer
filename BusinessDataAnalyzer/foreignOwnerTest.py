@@ -4,9 +4,10 @@ import pandas as pd
 import os
 
 analyzedYear = "2014"
+analyzedMetric = "ROA"
 
 def loadDataFramesFromFile():
-    df = loadDataForOwnerTest(analyzedYear)
+    df = loadDataForOwnerTest(analyzedYear, analyzedMetric)
 
     return df
 
@@ -26,35 +27,31 @@ def splitData(df, year):
     domesticDF = []
 
     for index, row in df.iterrows():
-        currentRoa = float(row["ROA{}".format(year)])
+        currentValue = float(row["{}{}".format(analyzedMetric, year)])
 
-        if pd.isna(currentRoa) or currentRoa > 3 or currentRoa < -3:
+        if pd.isna(currentValue) or currentValue > 3 or currentValue < -3:
             continue
 
         if row["{}-1.Majitel-KrajinaPriznak".format(year)] == 'ZAHR':
             if isValidOwnershipSize(row["{}-1.Majitel-Podiel".format(year)]):
-                foreign.append(currentRoa)
+                foreign.append(currentValue)
                 foreignDF.append(row)
             continue
 
         if row["{}-2.Majitel-KrajinaPriznak".format(year)] == 'ZAHR':
             if isValidOwnershipSize(row["{}-2.Majitel-Podiel".format(year)]):
-                foreign.append(currentRoa)
+                foreign.append(currentValue)
                 foreignDF.append(row)
             continue
 
         if row["{}-3.Majitel-KrajinaPriznak".format(year)] == 'ZAHR':
             if isValidOwnershipSize(row["{}-3.Majitel-Podiel".format(year)]):
-                foreign.append(currentRoa)
+                foreign.append(currentValue)
                 foreignDF.append(row)
             continue
 
-        domestic.append(currentRoa)
+        domestic.append(currentValue)
         domesticDF.append(row)
-
-    print(len(domestic))
-    print("vs.")
-    print(len(foreign))
 
     dfForeign = pd.DataFrame(foreignDF)
     dfDomestic = pd.DataFrame(domesticDF)
