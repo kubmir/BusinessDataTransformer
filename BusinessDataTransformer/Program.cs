@@ -16,14 +16,13 @@ namespace BusinessDataTransformer
             var dataLoader = new CsvDataLoader();
             var dateProcessor = new DateProcessor();
             var dataAggregator = new DataAggregator();
-            var dataExporter = new CsvDataExporter();
             var excelReader = new ExcelDataLoader();
             var csvFinancialDataLoader = new CsvFinancialDataLoader();
 
             Console.WriteLine("Loading data...");
             var desktopFolder = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
             var result = dataLoader.LoadDataFromFile(desktopFolder + "/Data_DP/complet/Vlastnici_all.csv");
-            // var result = dataLoader.LoadDataFromFile(desktopFolder + "/Diplomovka_ESF/owners_issue.csv");
+            // var result = dataLoader.LoadDataFromFile(desktopFolder + "/Diplomovka_ESF/small_owners.csv");
 
             Console.WriteLine("Spliting data by year...");
             List<BusinessDataItem> parsedBusinessData = new List<BusinessDataItem>();
@@ -38,8 +37,12 @@ namespace BusinessDataTransformer
             Console.WriteLine("Aggregating data...");
             List<CompanyOutputData> ownersInfo = dataAggregator.AggregateDataByCompany(parsedBusinessData, companiesFinancialData);
 
-            dataExporter.ExportDataToCsv(ownersInfo);
 
+            // var dataExporter = new CsvDataExporter();
+            // dataExporter.ExportDataToCsv(ownersInfo);
+
+            var dataExporter = new PanelDataCsvExporter();
+            dataExporter.ExportPanelDataToCsv(ownersInfo);
             Console.WriteLine("Transformation finished");
         }
     }

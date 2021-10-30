@@ -64,5 +64,7 @@ namespace BusinessDataTransformer.Model
             return parsedNumber;
         }
 
+        public override string ToString() => $"{ICO} - {Roa2012} - {Roa2013} - {Roa2014}";
+
     }
 }
