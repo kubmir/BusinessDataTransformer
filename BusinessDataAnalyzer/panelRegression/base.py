@@ -9,6 +9,12 @@ import numpy.linalg as la
 from scipy import stats
 import numpy as np
 
+def filterOutLayers(df, currentAnalyzedCol):
+    if currentAnalyzedCol == "ROA":
+        return df[(df.ROA > -3) & (df.ROA < 3) & (df.ROA != 0)]
+    else:
+        return df[(df.ROE > -3) & (df.ROE < 3) & (df.ROE != 0)]
+
 def baseTestOwnerEffect(performance_variable, exog_variable):
     col_list = [
         "ICO",
@@ -23,11 +29,10 @@ def baseTestOwnerEffect(performance_variable, exog_variable):
 
     df = pd.read_csv(os.path.expanduser("~/Desktop/Diplomovka_ESF/panel_data.csv"), usecols=col_list, delimiter=';', encoding='utf8', index_col=["ICO", "Rok"])
 
-    years = df.index.get_level_values("Rok").to_list()
-    df["Rok"] = pd.Categorical(years)
+    dfWithoutOutLayer = filterOutLayers(df, performance_variable)
 
-    exog = sm.tools.tools.add_constant(df[exog_variable])
-    endog = df[performance_variable]
+    exog = sm.tools.tools.add_constant(dfWithoutOutLayer[exog_variable])
+    endog = dfWithoutOutLayer[performance_variable]
 
     # random effects model
     model_re = RandomEffects(endog, exog) 
