@@ -10,7 +10,7 @@ namespace BusinessDataTransformer.FileService
     public class PanelDataCsvExporter
     {
         private const int COUNT_OF_TOP_OWNERS = 3;
-        private const int START_YEAR = 2012;
+        private const int START_YEAR = 2010;
         private const int END_YEAR = 2014;
 
         public void ExportPanelDataToCsv(List<CompanyOutputData> companiesData)
@@ -152,6 +152,10 @@ namespace BusinessDataTransformer.FileService
         {
             switch (year)
             {
+                case 2010:
+                    return new Tuple<string, string>(GetStringOfFinancialValue(financialResultsData.Roa2010), GetStringOfFinancialValue(financialResultsData.Roe2010));
+                case 2011:
+                    return new Tuple<string, string>(GetStringOfFinancialValue(financialResultsData.Roa2011), GetStringOfFinancialValue(financialResultsData.Roe2011));
                 case 2012:
                     return new Tuple<string, string>(GetStringOfFinancialValue(financialResultsData.Roa2012), GetStringOfFinancialValue(financialResultsData.Roe2012));
                 case 2013:
