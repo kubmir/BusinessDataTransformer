@@ -12,7 +12,7 @@ namespace BusinessDataTransformer.FileService
         private const int COUNT_OF_TOP_OWNERS = 3;
         private const int START_YEAR = 2010;
         private const int END_YEAR = 2014;
-        private const string METRIC = "ROA";
+        private const string METRIC = "ROE";
 
         public void ExportPanelDataToCsv(List<CompanyOutputData> companiesData)
         {
@@ -187,23 +187,23 @@ namespace BusinessDataTransformer.FileService
 
         private bool IsCompleteRecord(FinancialResultsDataItem financialResults)
         {
-            if (financialResults.Roa2010 != 0 && financialResults.Roa2011 != 0 &&
-                financialResults.Roa2012 != 0 && financialResults.Roa2013 != 0 &&
-                financialResults.Roa2014 != 0 && financialResults.Roa2010 != double.MaxValue &&
-                financialResults.Roa2011 != double.MaxValue && financialResults.Roa2012 != double.MaxValue &&
-                financialResults.Roa2013 != double.MaxValue && financialResults.Roa2014 != double.MaxValue)
-            {
-                return true;
-            }
-
-            //if (financialResults.Roe2010 != 0 && financialResults.Roe2011 != 0 &&
-            //    financialResults.Roe2012 != 0 && financialResults.Roe2013 != 0 &&
-            //    financialResults.Roe2014 != 0 && financialResults.Roe2010 != double.MaxValue &&
-            //    financialResults.Roe2011 != double.MaxValue && financialResults.Roe2012 != double.MaxValue &&
-            //    financialResults.Roe2013 != double.MaxValue && financialResults.Roe2014 != double.MaxValue)
+            //if (financialResults.Roa2010 != 0 && financialResults.Roa2011 != 0 &&
+            //    financialResults.Roa2012 != 0 && financialResults.Roa2013 != 0 &&
+            //    financialResults.Roa2014 != 0 && financialResults.Roa2010 != double.MaxValue &&
+            //    financialResults.Roa2011 != double.MaxValue && financialResults.Roa2012 != double.MaxValue &&
+            //    financialResults.Roa2013 != double.MaxValue && financialResults.Roa2014 != double.MaxValue)
             //{
             //    return true;
             //}
+
+            if (financialResults.Roe2010 != 0 && financialResults.Roe2011 != 0 &&
+                financialResults.Roe2012 != 0 && financialResults.Roe2013 != 0 &&
+                financialResults.Roe2014 != 0 && financialResults.Roe2010 != double.MaxValue &&
+                financialResults.Roe2011 != double.MaxValue && financialResults.Roe2012 != double.MaxValue &&
+                financialResults.Roe2013 != double.MaxValue && financialResults.Roe2014 != double.MaxValue)
+            {
+                return true;
+            }
 
             return false;
         }
