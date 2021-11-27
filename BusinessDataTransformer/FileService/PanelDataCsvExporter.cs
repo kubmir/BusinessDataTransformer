@@ -38,7 +38,7 @@ namespace BusinessDataTransformer.FileService
 
         private string GenerateCsvHeader()
         {
-            return "ICO;Rok;ROA;ROE;Zahranicny_vlastnik;Institucionalny_vlastnik;Koncentracia_vlastnictva;Jednoosobova_SRO";
+            return "ICO;Rok;ROA;ROE;Zahranicny_vlastnik;Institucionalny_vlastnik;Koncentracia_vlastnictva;Jednoosobova_SRO;Minulorocny_ROA;Minulorocny_ROE";
         }
 
         public string[] TransformCompanyDataToCsvString(CompanyOutputData companyData)
@@ -67,6 +67,7 @@ namespace BusinessDataTransformer.FileService
 
                     if (ownerData.Count != 0 && companyData.FinancialResults != null)
                     {
+                        var financialDataOfPreviousYear = GetFinancialDataOfYear(currentYear - 1, companyData.FinancialResults);
                         var financialDataOfYear = GetFinancialDataOfYear(currentYear, companyData.FinancialResults);
                         var hasForeignOwner = HasForeignOwner(ownerData);
                         var hasInstituionalOwner = HasInstitutionalOwner(ownerData);
@@ -75,7 +76,7 @@ namespace BusinessDataTransformer.FileService
 
                         if (concentration != -1 && financialDataOfYear.Item1 != "" && financialDataOfYear.Item2 != "")
                         {
-                            var dataString = $"{currentYear};{financialDataOfYear.Item1};{financialDataOfYear.Item2};{hasForeignOwner};{hasInstituionalOwner};{GetStringOfFinancialValue(concentration)};{isOnePersonSro}";
+                            var dataString = $"{currentYear};{financialDataOfYear.Item1};{financialDataOfYear.Item2};{hasForeignOwner};{hasInstituionalOwner};{GetStringOfFinancialValue(concentration)};{isOnePersonSro};{financialDataOfPreviousYear.Item1};{financialDataOfPreviousYear.Item2}";
 
                             companyLines[index] = $"{companyData.ICO};{dataString}";
                             index++;
@@ -152,6 +153,8 @@ namespace BusinessDataTransformer.FileService
         {
             switch (year)
             {
+                case 2011:
+                    return new Tuple<string, string>(GetStringOfFinancialValue(financialResultsData.Roa2011), GetStringOfFinancialValue(financialResultsData.Roe2011));
                 case 2012:
                     return new Tuple<string, string>(GetStringOfFinancialValue(financialResultsData.Roa2012), GetStringOfFinancialValue(financialResultsData.Roe2012));
                 case 2013:
