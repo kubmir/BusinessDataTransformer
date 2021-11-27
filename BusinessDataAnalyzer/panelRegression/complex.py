@@ -9,11 +9,21 @@ import numpy.linalg as la
 from scipy import stats
 import numpy as np
 
-def filterOutLayers(df, currentAnalyzedCol):
-    if currentAnalyzedCol == "ROA":
-        return df[(df.ROA > -3) & (df.ROA < 3) & (df.ROA != 0)]
-    else:
-        return df[(df.ROE > -3) & (df.ROE < 3) & (df.ROE != 0)]
+from sklearn.preprocessing import StandardScaler
+from boxplotFilter import filterOutLayers
+
+# def filterOutLayers(df, currentAnalyzedCol):
+#     if currentAnalyzedCol == "ROA":
+#         return df[(df.ROA > -3) & (df.ROA < 3) & (df.ROA != 0)]
+#     else:
+#         return df[(df.ROE > -3) & (df.ROE < 3) & (df.ROE != 0)]
+
+def filterCompaniesWithOneRecord(df):
+    df_count = df.reset_index().groupby("ICO").agg({"ROA":"count", "ROE":"count"}).reset_index()
+    ICO_all_years = df_count.loc[(df_count.ROA > 1) & (df_count.ROE > 1)]["ICO"]
+    dff = df.reset_index()
+    return dff.loc[dff.ICO.isin(ICO_all_years)].set_index(["ICO", "Rok"])
+    
 
 def baseTestOwnerEffect(performance_variable):
     col_list = [
@@ -27,13 +37,21 @@ def baseTestOwnerEffect(performance_variable):
         "Jednoosobova_SRO"
     ]
 
-    df = pd.read_csv(os.path.expanduser("~/Desktop/Diplomovka_ESF/panel_data.csv"), usecols=col_list, delimiter=';', encoding='utf8', index_col=["ICO", "Rok"])
+    df = pd.read_csv(os.path.expanduser("~/Desktop/Diplomovka_ESF/final_data/complex_5y.csv"), usecols=col_list, delimiter=';', encoding='utf8', index_col=["ICO", "Rok"])
+
+    df = df.reset_index()
+
+    df["ROA_pow"] = df["ROA"]**2
+    df["ROE_pow"] = df["ROE"]**2
+
+    df = df.set_index(["ICO", "Rok"])
 
     dfWithoutOutLayer = filterOutLayers(df, performance_variable)
+    dfCleared = filterCompaniesWithOneRecord(dfWithoutOutLayer)
 
     exog_vars = ["Zahranicny_vlastnik", "Institucionalny_vlastnik", "Koncentracia_vlastnictva", "Jednoosobova_SRO"]
-    exog = sm.add_constant(dfWithoutOutLayer[exog_vars])
-    endog = dfWithoutOutLayer[performance_variable]
+    exog = sm.add_constant(dfCleared[exog_vars])
+    endog = dfCleared[performance_variable]
 
     # random effects model
     model_re = RandomEffects(endog, exog) 
@@ -69,7 +87,7 @@ def hausman(fe, re):
     return chi2, df, pval
 
 def main():
-    baseTestOwnerEffect("ROE")
+    baseTestOwnerEffect("ROE_pow")
 
 if __name__ == "__main__":
     main()

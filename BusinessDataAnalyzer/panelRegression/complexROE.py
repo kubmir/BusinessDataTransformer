@@ -9,17 +9,12 @@ import numpy.linalg as la
 from scipy import stats
 import numpy as np
 
-def filterOutLayers(df, currentAnalyzedCol):
-    if currentAnalyzedCol == "ROA":
-        return df[(df.ROA > -3) & (df.ROA < 3) & (df.ROA != 0)]
-    else:
-        return df[(df.ROE > -3) & (df.ROE < 3) & (df.ROE != 0)]
+from boxplotFilter import filterOutLayers
 
-def baseTestOwnerEffect(performance_variable, exog_variable):
+def baseTestOwnerEffect():
     col_list = [
         "ICO",
         "Rok",
-        "ROA",
         "ROE",
         "Zahranicny_vlastnik",
         "Institucionalny_vlastnik",
@@ -27,12 +22,13 @@ def baseTestOwnerEffect(performance_variable, exog_variable):
         "Jednoosobova_SRO"
     ]
 
-    df = pd.read_csv(os.path.expanduser("~/Desktop/Diplomovka_ESF/final_data/panel_data.csv"), usecols=col_list, delimiter=';', encoding='utf8', index_col=["ICO", "Rok"])
+    df = pd.read_csv(os.path.expanduser("~/Desktop/Diplomovka_ESF/final_data/only_complete_roe_3y.csv"), usecols=col_list, delimiter=';', encoding='utf8', index_col=["ICO", "Rok"])
 
-    dfWithoutOutLayer = filterOutLayers(df, performance_variable)
+    dfWithoutOutLayer = filterOutLayers(df, "ROE")
 
-    exog = sm.tools.tools.add_constant(dfWithoutOutLayer[exog_variable])
-    endog = dfWithoutOutLayer[performance_variable]
+    exog_vars = ["Zahranicny_vlastnik", "Institucionalny_vlastnik", "Koncentracia_vlastnictva", "Jednoosobova_SRO"]
+    exog = sm.add_constant(dfWithoutOutLayer[exog_vars])
+    endog = dfWithoutOutLayer["ROE"]
 
     # random effects model
     model_re = RandomEffects(endog, exog) 
@@ -66,3 +62,9 @@ def hausman(fe, re):
     pval = stats.chi2.sf(chi2, df)
     
     return chi2, df, pval
+
+def main():
+    baseTestOwnerEffect()
+
+if __name__ == "__main__":
+    main()
