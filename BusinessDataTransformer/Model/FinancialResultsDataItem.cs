@@ -5,6 +5,9 @@ namespace BusinessDataTransformer.Model
     public class FinancialResultsDataItem
     {
         public string ICO { get; set; }
+        public string CZ_NACE_TWO { get; set; } 
+        public string CZ_NACE { get; set; }
+        public string Section { get; set; }
 
         public double Assets2010 { get; set; }
         public double Assets2011 { get; set; }
@@ -62,6 +65,9 @@ namespace BusinessDataTransformer.Model
             return new FinancialResultsDataItem
             {
                 ICO = values[0],
+                CZ_NACE_TWO = values[3],
+                CZ_NACE = values[5],
+                Section = parseSection(values[4]),
 
                 Assets2010 = Assets2010,
                 Assets2011 = Assets2011,
@@ -101,6 +107,11 @@ namespace BusinessDataTransformer.Model
             double.TryParse(value, out parsedNumber);
         
             return parsedNumber;
+        }
+
+        private static string parseSection(string section)
+        {
+            return section[0].ToString();
         }
 
         public override string ToString() => $"{ICO} - {Roa2010} - {Roa2011} - {Roa2012} - {Roa2013} - {Roa2014}";

@@ -44,7 +44,7 @@ namespace BusinessDataTransformer.FileService
 
         private string GenerateCsvHeader()
         {
-            return $"ICO;Rok;{METRIC};Zahranicny_vlastnik;Institucionalny_vlastnik;Koncentracia_vlastnictva;Jednoosobova_SRO";
+            return $"ICO;Rok;{METRIC};Zahranicny_vlastnik;Institucionalny_vlastnik;Koncentracia_vlastnictva;Jednoosobova_SRO;NACE_2;NACE:Sekcia";
         }
 
         public string[] TransformCompanyDataToCsvString(CompanyOutputData companyData)
@@ -81,7 +81,7 @@ namespace BusinessDataTransformer.FileService
 
                         if (concentration != -1)
                         {
-                            var dataString = $"{currentYear};{financialDataOfYear};{hasForeignOwner};{hasInstituionalOwner};{GetStringOfFinancialValue(concentration)};{isOnePersonSro}";
+                            var dataString = $"{currentYear};{financialDataOfYear};{hasForeignOwner};{hasInstituionalOwner};{GetStringOfFinancialValue(concentration)};{isOnePersonSro};{companyData.FinancialResults.CZ_NACE_TWO};{companyData.FinancialResults.CZ_NACE};{companyData.FinancialResults.Section}";
 
                             companyLines[index] = $"{companyData.ICO};{dataString}";
                             index++;
