@@ -41,7 +41,7 @@ namespace BusinessDataTransformer.FileService
                     if (currentIcoInDataSetIndex != -1)
                     {
                         icosInDataset.RemoveAt(currentIcoInDataSetIndex);
-                        financialData.Add(FinancialResultsDataItem.FromExcel(worksheet.Cells[row, 1, row, colCount].ToText()));
+                        financialData.Add(FinancialResultsDataItem.FromExcel(worksheet, row));
                     }
                 }
 

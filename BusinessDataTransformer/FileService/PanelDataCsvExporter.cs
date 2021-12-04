@@ -12,13 +12,12 @@ namespace BusinessDataTransformer.FileService
         private const int COUNT_OF_TOP_OWNERS = 3;
         private const int START_YEAR = 2010;
         private const int END_YEAR = 2014;
-        private const string METRIC = "ROA";
 
         public void ExportPanelDataToCsv(List<CompanyOutputData> companiesData)
         {
             var fileHeader = GenerateCsvHeader();
 
-            using (StreamWriter file = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + $"/Diplomovka_ESF/panel_data_only_complete_{METRIC}.csv", false, Encoding.UTF8))
+            using (StreamWriter file = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + $"/Diplomovka_ESF/panel_data.csv", false, Encoding.UTF8))
             {
                 file.WriteLine(fileHeader);
 
@@ -44,7 +43,7 @@ namespace BusinessDataTransformer.FileService
 
         private string GenerateCsvHeader()
         {
-            return $"ICO;Rok;{METRIC};Zahranicny_vlastnik;Institucionalny_vlastnik;Koncentracia_vlastnictva;Jednoosobova_SRO;NACE_2;NACE:Sekcia";
+            return $"ICO;Rok;ROA;ROE;Zahranicny_vlastnik;Institucionalny_vlastnik;Koncentracia_vlastnictva;Jednoosobova_SRO;NACE_2;NACE;Sekcia";
         }
 
         public string[] TransformCompanyDataToCsvString(CompanyOutputData companyData)
@@ -71,7 +70,7 @@ namespace BusinessDataTransformer.FileService
 
                     ownerData.RemoveAll(data => !double.TryParse(data.OwnerShare, out _));
 
-                    if (ownerData.Count != 0 && companyData.FinancialResults != null && IsCompleteRecord(companyData.FinancialResults))
+                    if (ownerData.Count != 0 && companyData.FinancialResults != null)
                     {
                         var financialDataOfYear = GetFinancialDataOfYear(currentYear, companyData.FinancialResults);
                         var hasForeignOwner = HasForeignOwner(ownerData);
@@ -79,9 +78,9 @@ namespace BusinessDataTransformer.FileService
                         var isOnePersonSro = IsOnePersonSro(ownerData);
                         var concentration = CalculateOwnershipConcentration(ownerData);
 
-                        if (concentration != -1)
+                        if (concentration != -1 && financialDataOfYear.Item1 != "" && financialDataOfYear.Item2 != "")
                         {
-                            var dataString = $"{currentYear};{financialDataOfYear};{hasForeignOwner};{hasInstituionalOwner};{GetStringOfFinancialValue(concentration)};{isOnePersonSro};{companyData.FinancialResults.CZ_NACE_TWO};{companyData.FinancialResults.CZ_NACE};{companyData.FinancialResults.Section}";
+                            var dataString = $"{currentYear};{financialDataOfYear.Item1};{financialDataOfYear.Item2};{hasForeignOwner};{hasInstituionalOwner};{GetStringOfFinancialValue(concentration)};{isOnePersonSro};{companyData.FinancialResults.CZ_NACE_TWO};{companyData.FinancialResults.CZ_NACE};{companyData.FinancialResults.Section}";
 
                             companyLines[index] = $"{companyData.ICO};{dataString}";
                             index++;
@@ -154,20 +153,20 @@ namespace BusinessDataTransformer.FileService
             return concentration;
         }
 
-        private string GetFinancialDataOfYear(int year, FinancialResultsDataItem financialResultsData)
+        private Tuple<string, string> GetFinancialDataOfYear(int year, FinancialResultsDataItem financialResultsData)
         {
             switch (year)
             {
                 case 2010:
-                    return GetStringOfFinancialValue(METRIC == "ROA" ? financialResultsData.Roa2010 : financialResultsData.Roe2010);
+                    return new Tuple<string, string>(GetStringOfFinancialValue(financialResultsData.Roa2010), GetStringOfFinancialValue(financialResultsData.Roe2010));
                 case 2011:
-                    return GetStringOfFinancialValue(METRIC == "ROA" ? financialResultsData.Roa2011 : financialResultsData.Roe2011);
+                    return new Tuple<string, string>(GetStringOfFinancialValue(financialResultsData.Roa2011), GetStringOfFinancialValue(financialResultsData.Roe2011));
                 case 2012:
-                    return GetStringOfFinancialValue(METRIC == "ROA" ? financialResultsData.Roa2012 : financialResultsData.Roe2012);
+                    return new Tuple<string, string>(GetStringOfFinancialValue(financialResultsData.Roa2012), GetStringOfFinancialValue(financialResultsData.Roe2012));
                 case 2013:
-                    return GetStringOfFinancialValue(METRIC == "ROA" ? financialResultsData.Roa2013 : financialResultsData.Roe2013);
+                    return new Tuple<string, string>(GetStringOfFinancialValue(financialResultsData.Roa2013), GetStringOfFinancialValue(financialResultsData.Roe2013));
                 case 2014:
-                    return GetStringOfFinancialValue(METRIC == "ROA" ? financialResultsData.Roa2014 : financialResultsData.Roe2014);
+                    return new Tuple<string, string>(GetStringOfFinancialValue(financialResultsData.Roa2014), GetStringOfFinancialValue(financialResultsData.Roe2014));
                 default:
                     return null;
             }
@@ -183,29 +182,6 @@ namespace BusinessDataTransformer.FileService
             {
                 return value.ToString("F4");
             }
-        }
-
-        private bool IsCompleteRecord(FinancialResultsDataItem financialResults)
-        {
-            if (financialResults.Roa2010 != 0 && financialResults.Roa2011 != 0 &&
-                financialResults.Roa2012 != 0 && financialResults.Roa2013 != 0 &&
-                financialResults.Roa2014 != 0 && financialResults.Roa2010 != double.MaxValue &&
-                financialResults.Roa2011 != double.MaxValue && financialResults.Roa2012 != double.MaxValue &&
-                financialResults.Roa2013 != double.MaxValue && financialResults.Roa2014 != double.MaxValue)
-            {
-                return true;
-            }
-
-            //if (financialResults.Roe2010 != 0 && financialResults.Roe2011 != 0 &&
-            //    financialResults.Roe2012 != 0 && financialResults.Roe2013 != 0 &&
-            //    financialResults.Roe2014 != 0 && financialResults.Roe2010 != double.MaxValue &&
-            //    financialResults.Roe2011 != double.MaxValue && financialResults.Roe2012 != double.MaxValue &&
-            //    financialResults.Roe2013 != double.MaxValue && financialResults.Roe2014 != double.MaxValue)
-            //{
-            //    return true;
-            //}
-
-            return false;
         }
     }
 }

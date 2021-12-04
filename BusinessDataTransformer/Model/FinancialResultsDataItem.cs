@@ -1,4 +1,5 @@
 ﻿using System;
+using OfficeOpenXml;
 
 namespace BusinessDataTransformer.Model
 {
@@ -39,35 +40,33 @@ namespace BusinessDataTransformer.Model
         public double Roe2013 { get; set; }
         public double Roe2014 { get; set; }
 
-        public static FinancialResultsDataItem FromExcel(String excelRow)
+        public static FinancialResultsDataItem FromExcel(ExcelWorksheet worksheet, int row)
         {
-            string[] values = excelRow.Split(',');
+            var Assets2010 = parseDouble(worksheet.Cells[row, 17].ToText());
+            var Assets2011 = parseDouble(worksheet.Cells[row, 18].ToText());
+            var Assets2012 = parseDouble(worksheet.Cells[row, 19].ToText());
+            var Assets2013 = parseDouble(worksheet.Cells[row, 20].ToText());
+            var Assets2014 = parseDouble(worksheet.Cells[row, 21].ToText());
 
-            var Assets2010 = parseDouble(values[16]);
-            var Assets2011 = parseDouble(values[17]);
-            var Assets2012 = parseDouble(values[18]);
-            var Assets2013 = parseDouble(values[19]);
-            var Assets2014 = parseDouble(values[20]);
+            var Equity2010 = parseDouble(worksheet.Cells[row, 32].ToText());
+            var Equity2011 = parseDouble(worksheet.Cells[row, 33].ToText());
+            var Equity2012 = parseDouble(worksheet.Cells[row, 34].ToText());
+            var Equity2013 = parseDouble(worksheet.Cells[row, 35].ToText());
+            var Equity2014 = parseDouble(worksheet.Cells[row, 36].ToText());
 
-            var Equity2010 = parseDouble(values[31]);
-            var Equity2011 = parseDouble(values[32]);
-            var Equity2012 = parseDouble(values[33]);
-            var Equity2013 = parseDouble(values[34]);
-            var Equity2014 = parseDouble(values[35]);
-
-            var Ebit2010 = parseDouble(values[46]);
-            var Ebit2011 = parseDouble(values[47]);
-            var Ebit2012 = parseDouble(values[48]);
-            var Ebit2013 = parseDouble(values[49]);
-            var Ebit2014 = parseDouble(values[50]);
+            var Ebit2010 = parseDouble(worksheet.Cells[row, 47].ToText());
+            var Ebit2011 = parseDouble(worksheet.Cells[row, 48].ToText());
+            var Ebit2012 = parseDouble(worksheet.Cells[row, 49].ToText());
+            var Ebit2013 = parseDouble(worksheet.Cells[row, 50].ToText());
+            var Ebit2014 = parseDouble(worksheet.Cells[row, 51].ToText());
 
 
             return new FinancialResultsDataItem
             {
-                ICO = values[0],
-                CZ_NACE_TWO = values[3],
-                CZ_NACE = values[5],
-                Section = parseSection(values[4]),
+                ICO = worksheet.Cells[row, 1].ToText(),
+                CZ_NACE_TWO = worksheet.Cells[row, 4].ToText(),
+                CZ_NACE = worksheet.Cells[row, 6].ToText(),
+                Section = parseSection(worksheet.Cells[row, 5].ToText()),
 
                 Assets2010 = Assets2010,
                 Assets2011 = Assets2011,
