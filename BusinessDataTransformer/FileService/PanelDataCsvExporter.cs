@@ -43,7 +43,7 @@ namespace BusinessDataTransformer.FileService
 
         private string GenerateCsvHeader()
         {
-            return $"ICO;Rok;ROA;ROE;Zahranicny_vlastnik;Institucionalny_vlastnik;Koncentracia_vlastnictva;Jednoosobova_SRO;NACE_2;NACE;Sekcia";
+            return $"ICO;Rok;ROA;ROE;Zahranicny_vlastnik;Institucionalny_vlastnik;Koncentracia_vlastnictva_h3;Koncentracia_vlastnictva_h5;Koncentracia_vlastnictva_t3;Koncentracia_vlastnictva_t5;Jednoosobova_SRO;Sekcia";
         }
 
         public string[] TransformCompanyDataToCsvString(CompanyOutputData companyData)
@@ -57,10 +57,7 @@ namespace BusinessDataTransformer.FileService
                 {
                     companyData.OwnersByYears[currentYear].Sort(delegate (OwnerInfo x, OwnerInfo y)
                     {
-                        if (x.OwnerShare == null && y.OwnerShare == null) return 0;
-                        else if (x.OwnerShare == null) return -1;
-                        else if (y.OwnerShare == null) return 1;
-                        else return y.OwnerShare.CompareTo(x.OwnerShare);
+                        return y.OwnerShare.CompareTo(x.OwnerShare);
                     });
 
                     var ownersCount = companyData.OwnersByYears[currentYear].Count;
@@ -68,19 +65,18 @@ namespace BusinessDataTransformer.FileService
                         ? companyData.OwnersByYears[currentYear].GetRange(0, COUNT_OF_TOP_OWNERS)
                         : companyData.OwnersByYears[currentYear];
 
-                    ownerData.RemoveAll(data => !double.TryParse(data.OwnerShare, out _));
-
                     if (ownerData.Count != 0 && companyData.FinancialResults != null)
                     {
                         var financialDataOfYear = GetFinancialDataOfYear(currentYear, companyData.FinancialResults);
                         var hasForeignOwner = HasForeignOwner(ownerData);
                         var hasInstituionalOwner = HasInstitutionalOwner(ownerData);
                         var isOnePersonSro = IsOnePersonSro(ownerData);
-                        var concentration = CalculateOwnershipConcentration(ownerData);
+                        var (h3, t3) = CalculateOwnershipConcentration(companyData.OwnersByYears[currentYear], 3);
+                        var (h5, t5) = CalculateOwnershipConcentration(companyData.OwnersByYears[currentYear], 5);
 
-                        if (concentration != -1 && financialDataOfYear.Item1 != "" && financialDataOfYear.Item2 != "")
+                        if (financialDataOfYear.Item1 != "" && financialDataOfYear.Item2 != "")
                         {
-                            var dataString = $"{currentYear};{financialDataOfYear.Item1};{financialDataOfYear.Item2};{hasForeignOwner};{hasInstituionalOwner};{GetStringOfFinancialValue(concentration)};{isOnePersonSro};{companyData.FinancialResults.CZ_NACE_TWO};{companyData.FinancialResults.CZ_NACE};{companyData.FinancialResults.Section}";
+                            var dataString = $"{currentYear};{financialDataOfYear.Item1};{financialDataOfYear.Item2};{hasForeignOwner};{hasInstituionalOwner};{GetStringOfFinancialValue(h3)};{GetStringOfFinancialValue(h5)};{GetStringOfFinancialValue(t3)};{GetStringOfFinancialValue(t5)};{isOnePersonSro};{companyData.FinancialResults.Section}";
 
                             companyLines[index] = $"{companyData.ICO};{dataString}";
                             index++;
@@ -98,10 +94,7 @@ namespace BusinessDataTransformer.FileService
 
             owners.ForEach(owner =>
             {
-                var ownerShare = 0.00;
-                double.TryParse(owner.OwnerShare, out ownerShare);
-
-                if (owner.OwnerCountrySign == "ZAHR" && ownerShare > 10)
+                if (owner.OwnerCountrySign == "ZAHR" && owner.OwnerShare > 10)
                 {
                     hasForeignOwner = true;
                 }
@@ -119,38 +112,32 @@ namespace BusinessDataTransformer.FileService
         {
             if (owners.Count == 1) {
                 var owner = owners.First();
-                double ownerShare;
-                double.TryParse(owner.OwnerShare, out ownerShare);
 
                 double fullOwnership;
                 double.TryParse("100", out fullOwnership);
 
-                return owner.OwnerType == "FO" && ownerShare == fullOwnership;
+                return owner.OwnerType == "FO" && owner.OwnerShare == fullOwnership;
             }
 
             return false;
         }
 
 
-        private double CalculateOwnershipConcentration(List<OwnerInfo> owners)
+        private Tuple<double, double> CalculateOwnershipConcentration(List<OwnerInfo> owners, int maxCount)
         {
-            var concentration = 0.00;
+            var herfindahlIndex = 0.00;
+            var topIndex = 0.00;
+            var count = owners.Count > maxCount ? maxCount : owners.Count;
 
-            for (int i = 0; i < owners.Count; i++)
+            for (int i = 0; i < count; i++)
             {
                 var owner = owners.ElementAt(i);
-                double ownerShare;
 
-                if (double.TryParse(owner.OwnerShare, out ownerShare))
-                {
-                    concentration += Math.Pow(ownerShare, 2);
-                } else
-                {
-                    return -1;
-                }
+                herfindahlIndex += Math.Pow(owner.OwnerShare, 2);
+                topIndex += owner.OwnerShare;
             }
 
-            return concentration;
+            return new Tuple<double, double>(herfindahlIndex, topIndex);
         }
 
         private Tuple<string, string> GetFinancialDataOfYear(int year, FinancialResultsDataItem financialResultsData)

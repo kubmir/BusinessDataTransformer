@@ -24,27 +24,33 @@ namespace BusinessDataTransformer.Aggregators
                         {
                             if (companyByYearAndOwner.FromTime.Day == 1 && companyByYearAndOwner.FromTime.Month == 1)
                             {
-                                var ownerInfo = new OwnerInfo
-                                {
-                                    OwnerId = companyByYearAndOwner.OwnerId,
-                                    CountryOfOwner = companyByYearAndOwner.CountryOfOwner,
-                                    OwnerCountrySign = companyByYearAndOwner.OwnerCountrySign,
-                                    OwnerShare = companyByYearAndOwner.OwnerShare,
-                                    OwnerType = companyByYearAndOwner.OwnerType,
-                                    LegalFormOfOwner = String.IsNullOrEmpty(companyByYearAndOwner.LegalFormOfOwner)
-                                        ? companyByYearAndOwner.OwnerType
-                                        : companyByYearAndOwner.LegalFormOfOwner,
-                                    FromTime = companyByYearAndOwner.FromTime,
-                                    ToTime = companyByYearAndOwner.ToTime,
-                                };
+                                var ownerShare = -1.00;
+                                double.TryParse(companyByYearAndOwner.OwnerShare, out ownerShare);
 
-                                if (ownersByYears.ContainsKey(companyByYearAndOwner.FromTime.Year))
+                                if (ownerShare != -1.00)
                                 {
-                                    ownersByYears[companyByYearAndOwner.FromTime.Year].Add(ownerInfo);
-                                }
-                                else
-                                {
-                                    ownersByYears.Add(companyByYearAndOwner.FromTime.Year, new List<OwnerInfo> { ownerInfo });
+                                    var ownerInfo = new OwnerInfo
+                                    {
+                                        OwnerId = companyByYearAndOwner.OwnerId,
+                                        CountryOfOwner = companyByYearAndOwner.CountryOfOwner,
+                                        OwnerCountrySign = companyByYearAndOwner.OwnerCountrySign,
+                                        OwnerShare = ownerShare,
+                                        OwnerType = companyByYearAndOwner.OwnerType,
+                                        LegalFormOfOwner = String.IsNullOrEmpty(companyByYearAndOwner.LegalFormOfOwner)
+                                            ? companyByYearAndOwner.OwnerType
+                                            : companyByYearAndOwner.LegalFormOfOwner,
+                                        FromTime = companyByYearAndOwner.FromTime,
+                                        ToTime = companyByYearAndOwner.ToTime,
+                                    };
+
+                                    if (ownersByYears.ContainsKey(companyByYearAndOwner.FromTime.Year))
+                                    {
+                                        ownersByYears[companyByYearAndOwner.FromTime.Year].Add(ownerInfo);
+                                    }
+                                    else
+                                    {
+                                        ownersByYears.Add(companyByYearAndOwner.FromTime.Year, new List<OwnerInfo> { ownerInfo });
+                                    }
                                 }
                             }
                         }

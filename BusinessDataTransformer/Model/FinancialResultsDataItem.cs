@@ -6,8 +6,6 @@ namespace BusinessDataTransformer.Model
     public class FinancialResultsDataItem
     {
         public string ICO { get; set; }
-        public string CZ_NACE_TWO { get; set; } 
-        public string CZ_NACE { get; set; }
         public string Section { get; set; }
 
         public double Assets2010 { get; set; }
@@ -64,8 +62,6 @@ namespace BusinessDataTransformer.Model
             return new FinancialResultsDataItem
             {
                 ICO = worksheet.Cells[row, 1].ToText(),
-                CZ_NACE_TWO = worksheet.Cells[row, 4].ToText(),
-                CZ_NACE = worksheet.Cells[row, 6].ToText(),
                 Section = parseSection(worksheet.Cells[row, 5].ToText()),
 
                 Assets2010 = Assets2010,

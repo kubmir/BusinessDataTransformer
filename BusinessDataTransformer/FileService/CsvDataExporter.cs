@@ -79,10 +79,7 @@ namespace BusinessDataTransformer.FileService
                 {
                     companyData.OwnersByYears[currentYear].Sort(delegate (OwnerInfo x, OwnerInfo y)
                     {
-                        if (x.OwnerShare == null && y.OwnerShare == null) return 0;
-                        else if (x.OwnerShare == null) return -1;
-                        else if (y.OwnerShare == null) return 1;
-                        else return y.OwnerShare.CompareTo(x.OwnerShare);
+                        return y.OwnerShare.CompareTo(x.OwnerShare);
                     });
 
                     var ownersCount = companyData.OwnersByYears[currentYear].Count;
@@ -92,12 +89,6 @@ namespace BusinessDataTransformer.FileService
 
                     foreach (var owner in ownerData)
                     {
-                        // Remove companies (from result csv) with not numeric owner share
-                        if (!double.TryParse(owner.OwnerShare, out _))
-                        {
-                            return null;
-                        }
-
                         companyDataByYears += $"{owner.LegalFormOfOwner};{owner.CountryOfOwner};{owner.OwnerCountrySign};{owner.OwnerShare};{owner.OwnerType};";
                     }
 

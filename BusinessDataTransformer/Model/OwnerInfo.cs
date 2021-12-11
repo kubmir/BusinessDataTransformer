@@ -8,7 +8,7 @@ namespace BusinessDataTransformer.Model
         public string CountryOfOwner { get; set; }
         public string OwnerCountrySign { get; set; }
         public string OwnerType { get; set; }
-        public string OwnerShare { get; set; }
+        public double OwnerShare { get; set; }
         public string IsValid { get; set; }
         public DateTime FromTime { get; set; }
         public DateTime ToTime { get; set; }
