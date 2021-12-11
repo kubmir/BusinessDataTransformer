@@ -77,7 +77,7 @@ namespace BusinessDataTransformer.FileService
 
                         if (financialDataOfYear.Item1 != "" && financialDataOfYear.Item2 != "")
                         {
-                            var dataString = $"{currentYear};{financialDataOfYear.Item1};{financialDataOfYear.Item2};{hasForeignOwner};{hasInstituionalOwner};{hasStateOwner};{GetStringOfFinancialValue(h3)};{GetStringOfFinancialValue(h5)};{GetStringOfFinancialValue(t3)};{GetStringOfFinancialValue(t5)};{isOnePersonSro};{companyData.FinancialResults.Section}";
+                            var dataString = $"{currentYear};{financialDataOfYear.Item1};{financialDataOfYear.Item2};{hasForeignOwner};{hasInstituionalOwner};{hasStateOwner};{GetStringOfFinancialValue(h3 / 100)};{GetStringOfFinancialValue(h5 / 100)};{GetStringOfFinancialValue(t3)};{GetStringOfFinancialValue(t5)};{isOnePersonSro};{companyData.FinancialResults.Section}";
 
                             companyLines[index] = $"{companyData.ICO};{dataString}";
                             index++;
