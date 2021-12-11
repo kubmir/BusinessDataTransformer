@@ -43,7 +43,7 @@ namespace BusinessDataTransformer.FileService
 
         private string GenerateCsvHeader()
         {
-            return $"ICO;Rok;ROA;ROE;Zahranicny_vlastnik;Institucionalny_vlastnik;Koncentracia_vlastnictva_h3;Koncentracia_vlastnictva_h5;Koncentracia_vlastnictva_t3;Koncentracia_vlastnictva_t5;Jednoosobova_SRO;Sekcia";
+            return $"ICO;Rok;ROA;ROE;Zahranicny_vlastnik;Institucionalny_vlastnik;Statny_vlastnik;Koncentracia_vlastnictva_h3;Koncentracia_vlastnictva_h5;Koncentracia_vlastnictva_t3;Koncentracia_vlastnictva_t5;Jednoosobova_SRO;Sekcia";
         }
 
         public string[] TransformCompanyDataToCsvString(CompanyOutputData companyData)
@@ -71,12 +71,13 @@ namespace BusinessDataTransformer.FileService
                         var hasForeignOwner = HasForeignOwner(ownerData);
                         var hasInstituionalOwner = HasInstitutionalOwner(ownerData);
                         var isOnePersonSro = IsOnePersonSro(ownerData);
+                        var hasStateOwner = HasStateOwner(ownerData);
                         var (h3, t3) = CalculateOwnershipConcentration(companyData.OwnersByYears[currentYear], 3);
                         var (h5, t5) = CalculateOwnershipConcentration(companyData.OwnersByYears[currentYear], 5);
 
                         if (financialDataOfYear.Item1 != "" && financialDataOfYear.Item2 != "")
                         {
-                            var dataString = $"{currentYear};{financialDataOfYear.Item1};{financialDataOfYear.Item2};{hasForeignOwner};{hasInstituionalOwner};{GetStringOfFinancialValue(h3)};{GetStringOfFinancialValue(h5)};{GetStringOfFinancialValue(t3)};{GetStringOfFinancialValue(t5)};{isOnePersonSro};{companyData.FinancialResults.Section}";
+                            var dataString = $"{currentYear};{financialDataOfYear.Item1};{financialDataOfYear.Item2};{hasForeignOwner};{hasInstituionalOwner};{hasStateOwner};{GetStringOfFinancialValue(h3)};{GetStringOfFinancialValue(h5)};{GetStringOfFinancialValue(t3)};{GetStringOfFinancialValue(t5)};{isOnePersonSro};{companyData.FinancialResults.Section}";
 
                             companyLines[index] = $"{companyData.ICO};{dataString}";
                             index++;
@@ -106,6 +107,20 @@ namespace BusinessDataTransformer.FileService
         private bool HasInstitutionalOwner(List<OwnerInfo> owners)
         {
             return owners.Any(owner => owner.OwnerType == "PO");
+        }
+
+        private bool HasStateOwner(List<OwnerInfo> owners)
+        {
+            return owners.Any(owner =>
+            {
+                var legalForm = owner.LegalFormOfOwner.ToLower();
+
+                return legalForm.Contains("svazek obcí") ||
+                    legalForm.Contains("obec") || legalForm.Contains("kraj") ||
+                    legalForm.Contains("organizační složka státu") ||
+                    legalForm.Contains("státní podnik") || legalForm.Contains("organizační složka státu") ||
+                    legalForm.Contains("fond (národního majetku, pozemkový)");
+            });
         }
 
         private bool IsOnePersonSro(List<OwnerInfo> owners)
