@@ -82,17 +82,27 @@ namespace BusinessDataTransformer.Model
                 Ebit2013 = Ebit2013,
                 Ebit2014 = Ebit2014,
 
-                Roa2010 = Assets2010 == 0.00 ? double.MaxValue : Ebit2010 / Assets2010,
-                Roa2011 = Assets2011 == 0.00 ? double.MaxValue : Ebit2011 / Assets2011,
-                Roa2012 = Assets2012 == 0.00 ? double.MaxValue : Ebit2012 / Assets2012,
-                Roa2013 = Assets2013 == 0.00 ? double.MaxValue : Ebit2013 / Assets2013,
-                Roa2014 = Assets2014 == 0.00 ? double.MaxValue : Ebit2014 / Assets2014,
+                Roa2010 = Assets2010 <= 0.00 ? double.MaxValue : Ebit2010 / Assets2010,
+                Roa2011 = Assets2011 <= 0.00 ? double.MaxValue : Ebit2011 / Assets2011,
+                Roa2012 = Assets2012 <= 0.00 ? double.MaxValue : Ebit2012 / Assets2012,
+                Roa2013 = Assets2013 <= 0.00 ? double.MaxValue : Ebit2013 / Assets2013,
+                Roa2014 = Assets2014 <= 0.00 ? double.MaxValue : Ebit2014 / Assets2014,
 
-                Roe2010 = Equity2010 <= 0.00 ? double.MaxValue : Ebit2010 / Equity2010,
-                Roe2011 = Equity2011 <= 0.00 ? double.MaxValue : Ebit2011 / Equity2011,
-                Roe2012 = Equity2012 <= 0.00 ? double.MaxValue : Ebit2012 / Equity2012,
-                Roe2013 = Equity2013 <= 0.00 ? double.MaxValue : Ebit2013 / Equity2013,
-                Roe2014 = Equity2014 <= 0.00 ? double.MaxValue : Ebit2014 / Equity2014,
+                Roe2010 = Equity2010 == 0.00 || (Equity2010 < 0 && Ebit2010 < 0)
+                    ? double.MaxValue
+                    : Ebit2010 / Equity2010,
+                Roe2011 = Equity2011 == 0.00 || (Equity2011 < 0 && Ebit2011 < 0)
+                    ? double.MaxValue
+                    : Ebit2011 / Equity2011,
+                Roe2012 = Equity2012 == 0.00 || (Equity2012 < 0 && Ebit2012 < 0)
+                    ? double.MaxValue
+                    : Ebit2012 / Equity2012,
+                Roe2013 = Equity2013 == 0.00 || (Equity2013 < 0 && Ebit2013 < 0)
+                    ? double.MaxValue
+                    : Ebit2013 / Equity2013,
+                Roe2014 = Equity2014 == 0.00 || (Equity2014 < 0 && Ebit2014 < 0)
+                    ? double.MaxValue
+                    : Ebit2014 / Equity2014,
             };
         }
 

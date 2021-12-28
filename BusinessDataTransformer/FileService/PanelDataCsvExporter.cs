@@ -43,7 +43,7 @@ namespace BusinessDataTransformer.FileService
 
         private string GenerateCsvHeader()
         {
-            return $"ICO;Rok;ROA;ROE;Zahranicny_vlastnik;Institucionalny_vlastnik;Statny_vlastnik;Koncentracia_vlastnictva_h3;Koncentracia_vlastnictva_h5;Koncentracia_vlastnictva_t3;Koncentracia_vlastnictva_t5;Jednoosobova_SRO;Sekcia";
+            return $"ICO;Rok;ROA;ROE;Zahranicny_vlastnik_FDI;Zahranicny_vlastnik_Majoritny;Vlastnik_PO;Statny_vlastnik;Koncentracia_vlastnictva_h3;Koncentracia_vlastnictva_h5;Koncentracia_vlastnictva_t3;Koncentracia_vlastnictva_t5;Jednoosobova_SRO;Sekcia";
         }
 
         public string[] TransformCompanyDataToCsvString(CompanyOutputData companyData)
@@ -68,16 +68,21 @@ namespace BusinessDataTransformer.FileService
                     if (ownerData.Count != 0 && companyData.FinancialResults != null)
                     {
                         var financialDataOfYear = GetFinancialDataOfYear(currentYear, companyData.FinancialResults);
-                        var hasForeignOwner = HasForeignOwner(ownerData);
-                        var hasInstituionalOwner = HasInstitutionalOwner(ownerData);
+                        var (hasForeignOwnerFDI, hasForeignOwnerMajority) = HasForeignOwner(ownerData);
+                        var hasCompanyOwner = HasCompanyOwner(ownerData);
                         var isOnePersonSro = IsOnePersonSro(ownerData);
                         var hasStateOwner = HasStateOwner(ownerData);
                         var (h3, t3) = CalculateOwnershipConcentration(companyData.OwnersByYears[currentYear], 3);
                         var (h5, t5) = CalculateOwnershipConcentration(companyData.OwnersByYears[currentYear], 5);
 
+                        if (t3 == t5 && t3 != Double.Parse("100"))
+                        {
+                            continue;
+                        }
+
                         if (financialDataOfYear.Item1 != "" && financialDataOfYear.Item2 != "")
                         {
-                            var dataString = $"{currentYear};{financialDataOfYear.Item1};{financialDataOfYear.Item2};{hasForeignOwner};{hasInstituionalOwner};{hasStateOwner};{GetStringOfFinancialValue(h3 / 100)};{GetStringOfFinancialValue(h5 / 100)};{GetStringOfFinancialValue(t3)};{GetStringOfFinancialValue(t5)};{isOnePersonSro};{companyData.FinancialResults.Section}";
+                            var dataString = $"{currentYear};{financialDataOfYear.Item1};{financialDataOfYear.Item2};{hasForeignOwnerFDI};{hasForeignOwnerMajority};{hasCompanyOwner};{hasStateOwner};{GetStringOfFinancialValue(h3 / 100)};{GetStringOfFinancialValue(h5 / 100)};{GetStringOfFinancialValue(t3)};{GetStringOfFinancialValue(t5)};{isOnePersonSro};{companyData.FinancialResults.Section}";
 
                             companyLines[index] = $"{companyData.ICO};{dataString}";
                             index++;
@@ -86,25 +91,31 @@ namespace BusinessDataTransformer.FileService
                 }
             }
 
-            return companyLines.Any(line => line == null) ? null : companyLines;
+            return companyLines.Count(line => line != null) > 1 ? companyLines : null;
         }
 
-        private bool HasForeignOwner(List<OwnerInfo> owners)
+        private Tuple<bool, bool> HasForeignOwner(List<OwnerInfo> owners)
         {
-            var hasForeignOwner = false;
+            var hasForeignOwnerFDI = false;
+            var hasForeignOwnerMajority = false;
 
             owners.ForEach(owner =>
             {
-                if (owner.OwnerCountrySign == "ZAHR" && owner.OwnerShare > 10)
+                if (owner.OwnerCountrySign == "ZAHR" && owner.OwnerShare >= 10)
                 {
-                    hasForeignOwner = true;
+                    hasForeignOwnerFDI = true;
+                }
+
+                if (owner.OwnerCountrySign == "ZAHR" && owner.OwnerShare >= 50)
+                {
+                    hasForeignOwnerMajority = true;
                 }
             });
 
-            return hasForeignOwner;
+            return new Tuple<bool, bool>(hasForeignOwnerFDI, hasForeignOwnerMajority);
         }
 
-        private bool HasInstitutionalOwner(List<OwnerInfo> owners)
+        private bool HasCompanyOwner(List<OwnerInfo> owners)
         {
             return owners.Any(owner => owner.OwnerType == "PO");
         }
