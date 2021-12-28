@@ -1,70 +1,69 @@
 import os
 import pandas as pd
 
-from linearmodels import PanelOLS
 from linearmodels import RandomEffects
 import statsmodels.api as sm
 
-import numpy.linalg as la
-from scipy import stats
-import numpy as np
+from filters import filterOutLayers, filterCompaniesWithOneRecord
 
-from boxplotFilter import filterOutLayers
-
-def baseTestOwnerEffect():
-    col_list = [
-        "ICO",
-        "Rok",
-        "ROA",
-        "Zahranicny_vlastnik",
-        "Institucionalny_vlastnik",
-        "Koncentracia_vlastnictva",
-        "Jednoosobova_SRO"
-    ]
-
-    df = pd.read_csv(os.path.expanduser("~/Desktop/Diplomovka_ESF/final_data/only_complete_roa_3y.csv"), usecols=col_list, delimiter=';', encoding='utf8', index_col=["ICO", "Rok"])
-
-    dfWithoutOutLayer = filterOutLayers(df, "ROA")
-
-    exog_vars = ["Zahranicny_vlastnik", "Institucionalny_vlastnik", "Koncentracia_vlastnictva", "Jednoosobova_SRO"]
-    exog = sm.add_constant(dfWithoutOutLayer[exog_vars])
-    endog = dfWithoutOutLayer["ROA"]
+def baseTestOwnerEffect(df, foreignOwnerColumnName, ownershipConcentrationColumnName):
+    exog_vars = [foreignOwnerColumnName, "Vlastnik_PO", ownershipConcentrationColumnName, "Jednoosobova_SRO", "Sekcia"]
+    exog = sm.add_constant(df[exog_vars])
+    endog = df["ROA"]
 
     # random effects model
     model_re = RandomEffects(endog, exog) 
     re_res = model_re.fit() 
 
-    # fixed effects model
-    model_fe = PanelOLS(endog, exog, entity_effects = True) 
-    fe_res = model_fe.fit() 
-
-    #print results
+    # print results
     print(re_res)
-    print(fe_res)
-
-    # Hausman test
-    hausman_results = hausman(fe_res, re_res) 
-    
-    print("chi-Squared: {}".format(str(hausman_results[0])))
-    print("degrees of freedom: {}".format(str(hausman_results[1])))
-    print("p-Value: {}".format(str(hausman_results[2])))
-    
-    return df
-
-def hausman(fe, re):
-    b = fe.params
-    B = re.params
-    v_b = fe.cov
-    v_B = re.cov
-
-    df = b[np.abs(b) < 1e8].size
-    chi2 = np.dot((b - B).T, la.inv(v_b - v_B).dot(b - B))
-    pval = stats.chi2.sf(chi2, df)
-    
-    return chi2, df, pval
 
 def main():
-    baseTestOwnerEffect()
+    col_list = [
+        "ICO",
+        "Rok",
+        "ROA",
+        "ROE",
+        "Zahranicny_vlastnik_FDI",
+        "Zahranicny_vlastnik_Majoritny",
+        "Vlastnik_PO",
+        "Koncentracia_vlastnictva_h3",
+        "Koncentracia_vlastnictva_h5",
+        "Koncentracia_vlastnictva_t3",
+        "Koncentracia_vlastnictva_t5",
+        "Jednoosobova_SRO",
+        "Sekcia"
+    ]
+    df = pd.read_csv(os.path.expanduser("~/Desktop/Diplomovka_ESF/panel_data.csv"), usecols=col_list, delimiter=';', encoding='utf8', index_col=["ICO", "Rok"])
+
+    dfWithoutOutLayer = filterOutLayers(df, "ROA")
+    dfCleared = filterCompaniesWithOneRecord(dfWithoutOutLayer)
+
+    print("Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3")
+    baseTestOwnerEffect(dfCleared, "Zahranicny_vlastnik_FDI", "Koncentracia_vlastnictva_h3")
+    
+    print("Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h5")
+    baseTestOwnerEffect(dfCleared, "Zahranicny_vlastnik_FDI", "Koncentracia_vlastnictva_h5")
+
+    print("Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3")
+    baseTestOwnerEffect(dfCleared, "Zahranicny_vlastnik_FDI", "Koncentracia_vlastnictva_t3")
+
+    print("Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t5")
+    baseTestOwnerEffect(dfCleared, "Zahranicny_vlastnik_FDI", "Koncentracia_vlastnictva_t5")
+
+    print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+
+    print("Zahranicny_vlastnik_Majoritny + Koncentracia_vlastnictva_h3")
+    baseTestOwnerEffect(dfCleared, "Zahranicny_vlastnik_Majoritny", "Koncentracia_vlastnictva_h3")
+    
+    print("Zahranicny_vlastnik_Majoritny + Koncentracia_vlastnictva_h5")
+    baseTestOwnerEffect(dfCleared, "Zahranicny_vlastnik_Majoritny", "Koncentracia_vlastnictva_h5")
+
+    print("Zahranicny_vlastnik_Majoritny + Koncentracia_vlastnictva_t3")
+    baseTestOwnerEffect(dfCleared, "Zahranicny_vlastnik_Majoritny", "Koncentracia_vlastnictva_t3")
+
+    print("Zahranicny_vlastnik_Majoritny + Koncentracia_vlastnictva_t5")
+    baseTestOwnerEffect(dfCleared, "Zahranicny_vlastnik_Majoritny", "Koncentracia_vlastnictva_t5")
 
 if __name__ == "__main__":
     main()

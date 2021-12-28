@@ -18,4 +18,11 @@ def filterOutLayers(df, currentAnalyzedCol):
     iqr = getIQR(df[[currentAnalyzedCol]])
     lowerLimit, upperLimit = getUpperLowerLimit(iqr, df[[currentAnalyzedCol]])
 
-    return df[(df[currentAnalyzedCol] >= lowerLimit) & (df[currentAnalyzedCol] <= upperLimit) & (df["Koncentracia_vlastnictva"] <= 10000) &  (df["Koncentracia_vlastnictva"] >= 0)]
+    return df[(df[currentAnalyzedCol] >= lowerLimit) & (df[currentAnalyzedCol] <= upperLimit)]
+
+
+def filterCompaniesWithOneRecord(df):
+    df_count = df.reset_index().groupby("ICO").agg({"ROA":"count", "ROE":"count"}).reset_index()
+    ICO_all_years = df_count.loc[(df_count.ROA > 1) & (df_count.ROE > 1)]["ICO"]
+    dff = df.reset_index()
+    return dff.loc[dff.ICO.isin(ICO_all_years)].set_index(["ICO", "Rok"])

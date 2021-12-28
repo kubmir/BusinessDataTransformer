@@ -34,22 +34,18 @@ def baseTestOwnerEffect(performance_variable):
         "Zahranicny_vlastnik",
         "Institucionalny_vlastnik",
         "Koncentracia_vlastnictva",
-        "Jednoosobova_SRO"
+        "Jednoosobova_SRO",
+        "Sekcia",
+        "NACE",
+        "NACE_2"
     ]
 
-    df = pd.read_csv(os.path.expanduser("~/Desktop/Diplomovka_ESF/final_data/complex_5y.csv"), usecols=col_list, delimiter=';', encoding='utf8', index_col=["ICO", "Rok"])
-
-    df = df.reset_index()
-
-    df["ROA_pow"] = df["ROA"]**2
-    df["ROE_pow"] = df["ROE"]**2
-
-    df = df.set_index(["ICO", "Rok"])
+    df = pd.read_csv("./panel_data_nace.csv", usecols=col_list, delimiter=';', encoding='utf8', index_col=["ICO", "Rok"])
 
     dfWithoutOutLayer = filterOutLayers(df, performance_variable)
     dfCleared = filterCompaniesWithOneRecord(dfWithoutOutLayer)
 
-    exog_vars = ["Zahranicny_vlastnik", "Institucionalny_vlastnik", "Koncentracia_vlastnictva", "Jednoosobova_SRO"]
+    exog_vars = ["Zahranicny_vlastnik", "Institucionalny_vlastnik", "Koncentracia_vlastnictva", "Jednoosobova_SRO", "Sekcia"]
     exog = sm.add_constant(dfCleared[exog_vars])
     endog = dfCleared[performance_variable]
 
@@ -58,7 +54,7 @@ def baseTestOwnerEffect(performance_variable):
     re_res = model_re.fit() 
 
     # fixed effects model
-    model_fe = PanelOLS(endog, exog, entity_effects = True) 
+    model_fe = PanelOLS(endog, exog, entity_effects = True, drop_absorbed=True) 
     fe_res = model_fe.fit() 
 
     #print results
@@ -87,7 +83,11 @@ def hausman(fe, re):
     return chi2, df, pval
 
 def main():
-    baseTestOwnerEffect("ROE_pow")
-
+    baseTestOwnerEffect("ROE")
+    # TODO: standardne odchylky - autokorelacia check - robustne standardne chyby, clustrovanie ?, kovariancna matica
+    # normalizovat koncentraciu napr. /10 000 - esteticka vyhoda
+    # casove vplyvy a odvetvia
+    # napr. priemerne hodnoty, delit zap. / klad. roe
+    # cyklus - priemer rokov, casove vplyvy - pozor na zmeny
 if __name__ == "__main__":
     main()
