@@ -1,93 +1,76 @@
 import os
 import pandas as pd
 
-from linearmodels import PanelOLS
 from linearmodels import RandomEffects
 import statsmodels.api as sm
 
-import numpy.linalg as la
-from scipy import stats
-import numpy as np
+from filters import filterOutLayers, filterCompaniesWithOneRecord
 
-from sklearn.preprocessing import StandardScaler
-from boxplotFilter import filterOutLayers
-
-# def filterOutLayers(df, currentAnalyzedCol):
-#     if currentAnalyzedCol == "ROA":
-#         return df[(df.ROA > -3) & (df.ROA < 3) & (df.ROA != 0)]
-#     else:
-#         return df[(df.ROE > -3) & (df.ROE < 3) & (df.ROE != 0)]
-
-def filterCompaniesWithOneRecord(df):
-    df_count = df.reset_index().groupby("ICO").agg({"ROA":"count", "ROE":"count"}).reset_index()
-    ICO_all_years = df_count.loc[(df_count.ROA > 1) & (df_count.ROE > 1)]["ICO"]
-    dff = df.reset_index()
-    return dff.loc[dff.ICO.isin(ICO_all_years)].set_index(["ICO", "Rok"])
-    
-
-def baseTestOwnerEffect(performance_variable):
-    col_list = [
-        "ICO",
-        "Rok",
-        "ROA",
-        "ROE",
-        "Zahranicny_vlastnik",
-        "Institucionalny_vlastnik",
-        "Koncentracia_vlastnictva",
-        "Jednoosobova_SRO",
-        "Sekcia",
-        "NACE",
-        "NACE_2"
-    ]
-
-    df = pd.read_csv("./panel_data_nace.csv", usecols=col_list, delimiter=';', encoding='utf8', index_col=["ICO", "Rok"])
-
-    dfWithoutOutLayer = filterOutLayers(df, performance_variable)
-    dfCleared = filterCompaniesWithOneRecord(dfWithoutOutLayer)
-
-    exog_vars = ["Zahranicny_vlastnik", "Institucionalny_vlastnik", "Koncentracia_vlastnictva", "Jednoosobova_SRO", "Sekcia"]
-    exog = sm.add_constant(dfCleared[exog_vars])
-    endog = dfCleared[performance_variable]
+def baseTestOwnerEffect(df, foreignOwnerColumnName, ownershipConcentrationColumnName, performanceVariable):
+    exog_vars = [foreignOwnerColumnName, "Vlastnik_PO", ownershipConcentrationColumnName, "Jednoosobova_SRO", "Sekcia"]
+    exog = sm.add_constant(df[exog_vars])
+    endog = df[performanceVariable]
 
     # random effects model
     model_re = RandomEffects(endog, exog) 
     re_res = model_re.fit() 
 
-    # fixed effects model
-    model_fe = PanelOLS(endog, exog, entity_effects = True, drop_absorbed=True) 
-    fe_res = model_fe.fit() 
-
-    #print results
+    # print results
     print(re_res)
-    print(fe_res)
 
-    # Hausman test
-    hausman_results = hausman(fe_res, re_res) 
+def main(performanceVariable):
+    col_list = [
+        "ICO",
+        "Rok",
+        "ROA",
+        "ROE",
+        "Zahranicny_vlastnik_FDI",
+        "Zahranicny_vlastnik_Majoritny",
+        "Vlastnik_PO",
+        "Koncentracia_vlastnictva_h3",
+        "Koncentracia_vlastnictva_h5",
+        "Koncentracia_vlastnictva_t3",
+        "Koncentracia_vlastnictva_t5",
+        "Jednoosobova_SRO",
+        "Sekcia"
+    ]
+    df = pd.read_csv(os.path.expanduser("~/Desktop/Diplomovka_ESF/panel_data.csv"), usecols=col_list, delimiter=';', encoding='utf8', index_col=["ICO", "Rok"])
+
+    dfWithoutOutLayer = filterOutLayers(df, performanceVariable)
+    dfCleared = filterCompaniesWithOneRecord(dfWithoutOutLayer)
+
+    print("\n Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3 \n")
+    baseTestOwnerEffect(dfCleared, "Zahranicny_vlastnik_FDI", "Koncentracia_vlastnictva_h3", performanceVariable)
     
-    print("chi-Squared: {}".format(str(hausman_results[0])))
-    print("degrees of freedom: {}".format(str(hausman_results[1])))
-    print("p-Value: {}".format(str(hausman_results[2])))
+    print("\n Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h5 \n")
+    baseTestOwnerEffect(dfCleared, "Zahranicny_vlastnik_FDI", "Koncentracia_vlastnictva_h5", performanceVariable)
+
+    print("\n Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3 \n")
+    baseTestOwnerEffect(dfCleared, "Zahranicny_vlastnik_FDI", "Koncentracia_vlastnictva_t3", performanceVariable)
+
+    print("\n Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t5 \n")
+    baseTestOwnerEffect(dfCleared, "Zahranicny_vlastnik_FDI", "Koncentracia_vlastnictva_t5", performanceVariable)
+
+
+    print("\n Zahranicny_vlastnik_Majoritny + Koncentracia_vlastnictva_h3 \n")
+    baseTestOwnerEffect(dfCleared, "Zahranicny_vlastnik_Majoritny", "Koncentracia_vlastnictva_h3", performanceVariable)
     
-    return df
+    print("\n Zahranicny_vlastnik_Majoritny + Koncentracia_vlastnictva_h5 \n")
+    baseTestOwnerEffect(dfCleared, "Zahranicny_vlastnik_Majoritny", "Koncentracia_vlastnictva_h5", performanceVariable)
 
-def hausman(fe, re):
-    b = fe.params
-    B = re.params
-    v_b = fe.cov
-    v_B = re.cov
+    print("\n Zahranicny_vlastnik_Majoritny + Koncentracia_vlastnictva_t3 \n")
+    baseTestOwnerEffect(dfCleared, "Zahranicny_vlastnik_Majoritny", "Koncentracia_vlastnictva_t3", performanceVariable)
 
-    df = b[np.abs(b) < 1e8].size
-    chi2 = np.dot((b - B).T, la.inv(v_b - v_B).dot(b - B))
-    pval = stats.chi2.sf(chi2, df)
-    
-    return chi2, df, pval
+    print("\n Zahranicny_vlastnik_Majoritny + Koncentracia_vlastnictva_t5 \n")
+    baseTestOwnerEffect(dfCleared, "Zahranicny_vlastnik_Majoritny", "Koncentracia_vlastnictva_t5", performanceVariable)
 
-def main():
-    baseTestOwnerEffect("ROE")
-    # TODO: standardne odchylky - autokorelacia check - robustne standardne chyby, clustrovanie ?, kovariancna matica
-    # normalizovat koncentraciu napr. /10 000 - esteticka vyhoda
-    # casove vplyvy a odvetvia
-    # napr. priemerne hodnoty, delit zap. / klad. roe
-    # cyklus - priemer rokov, casove vplyvy - pozor na zmeny
 if __name__ == "__main__":
-    main()
+    print("\n \n \n \n \n")
+    print("ROE")
+    print("\n \n \n \n \n")
+    main("ROE")
+    
+    print("\n \n \n \n \n")
+    print("ROA")
+    print("\n \n \n \n \n")
+    main("ROA")
