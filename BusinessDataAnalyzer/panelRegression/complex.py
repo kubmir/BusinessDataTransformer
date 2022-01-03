@@ -7,7 +7,7 @@ import statsmodels.api as sm
 from filters import filterOutLayers, filterCompaniesWithOneRecord
 
 def baseTestOwnerEffect(df, foreignOwnerColumnName, ownershipConcentrationColumnName, performanceVariable):
-    exog_vars = [foreignOwnerColumnName, "Vlastnik_PO", ownershipConcentrationColumnName, "Jednoosobova_SRO", "Sekcia"]
+    exog_vars = [foreignOwnerColumnName, "Vlastnik_PO", ownershipConcentrationColumnName, "Jednoosobova_SRO", "Statny_vlastnik", "Sekcia"]
     exog = sm.add_constant(df[exog_vars])
     endog = df[performanceVariable]
 
@@ -27,6 +27,7 @@ def main(performanceVariable):
         "Zahranicny_vlastnik_FDI",
         "Zahranicny_vlastnik_Majoritny",
         "Vlastnik_PO",
+        "Statny_vlastnik",
         "Koncentracia_vlastnictva_h3",
         "Koncentracia_vlastnictva_h5",
         "Koncentracia_vlastnictva_t3",

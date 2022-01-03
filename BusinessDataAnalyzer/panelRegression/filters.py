@@ -18,7 +18,7 @@ def filterOutLayers(df, currentAnalyzedCol):
     iqr = getIQR(df[[currentAnalyzedCol]])
     lowerLimit, upperLimit = getUpperLowerLimit(iqr, df[[currentAnalyzedCol]])
 
-    return df[(df[currentAnalyzedCol] >= lowerLimit) & (df[currentAnalyzedCol] <= upperLimit)]
+    return df[(df[currentAnalyzedCol] >= lowerLimit) & (df[currentAnalyzedCol] <= upperLimit) & (df["Koncentracia_vlastnictva_t5"] <= 100) & (df["Koncentracia_vlastnictva_t3"] <= 100)]
 
 
 def filterCompaniesWithOneRecord(df):
