@@ -12,16 +12,16 @@ import numpy.linalg as la
 from filters import filterOutLayers, filterCompaniesWithOneRecord
 
 def baseTestOwnerEffect(df, foreignOwnerColumnName, ownershipConcentrationColumnName, performanceVariable):
-    exog_vars = [foreignOwnerColumnName, "Vlastnik_PO", ownershipConcentrationColumnName, "Jednoosobova_SRO"]
+    exog_vars = [foreignOwnerColumnName, "Vlastnik_PO", ownershipConcentrationColumnName, "Jednoosobova_SRO", "Statny_vlastnik"]
     exog = sm.add_constant(df[exog_vars])
     endog = df[performanceVariable]
 
     # random effects model
-    model_re = RandomEffects(endog, exog, check_rank=False) 
+    model_re = RandomEffects(endog, exog) 
     re_res = model_re.fit() 
 
     # fixed effects model
-    model_fe = PanelOLS(endog, exog, entity_effects = True, time_effects=True) 
+    model_fe = PanelOLS(endog, exog, entity_effects = True, time_effects=True, drop_absorbed=True) 
     fe_res = model_fe.fit() 
 
     hausman_results = hausman(fe_res, re_res)
@@ -29,8 +29,10 @@ def baseTestOwnerEffect(df, foreignOwnerColumnName, ownershipConcentrationColumn
     print("Hausmann p-Value: {}".format(str(hausman_results[2])))
 
     if hausman_results[2] < 0.05:
+        # print("Fixed Effects")
         print(fe_res)
     else:
+        # print("Random Effects")
         print(re_res)
 
 
@@ -58,6 +60,7 @@ def main(performanceVariable, sectionValue):
         "Zahranicny_vlastnik_FDI",
         "Zahranicny_vlastnik_Majoritny",
         "Vlastnik_PO",
+        "Statny_vlastnik",
         "Koncentracia_vlastnictva_h3",
         "Koncentracia_vlastnictva_h5",
         "Koncentracia_vlastnictva_t3",
@@ -75,15 +78,9 @@ def main(performanceVariable, sectionValue):
 
     print("Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3")
     baseTestOwnerEffect(sectionCompanies, "Zahranicny_vlastnik_FDI", "Koncentracia_vlastnictva_h3", performanceVariable)
-    
-    print("Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h5")
-    baseTestOwnerEffect(sectionCompanies, "Zahranicny_vlastnik_FDI", "Koncentracia_vlastnictva_h5", performanceVariable)
 
     print("Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3")
     baseTestOwnerEffect(sectionCompanies, "Zahranicny_vlastnik_FDI", "Koncentracia_vlastnictva_t3", performanceVariable)
-
-    print("Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t5")
-    baseTestOwnerEffect(sectionCompanies, "Zahranicny_vlastnik_FDI", "Koncentracia_vlastnictva_t5", performanceVariable)
 
 if __name__ == "__main__":
     sections = [
@@ -97,7 +94,7 @@ if __name__ == "__main__":
         "H",
         "I",
         "J",
-        "K",
+        # "K", problem so singularnou maticou zrejme ziaden statny vlastnik - mam iba 1 firmu a zrejme je vyfiltrovana ako outliner
         "L",
         "M",
         "N",
