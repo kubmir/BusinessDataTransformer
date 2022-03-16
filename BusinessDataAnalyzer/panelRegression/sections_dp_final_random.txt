@@ -1,0 +1,2244 @@
+
+                                         Analyzing section A 
+
+
+ROE
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0036
+Estimator:              RandomEffects   R-squared (Between):              0.0153
+No. Observations:                6035   R-squared (Within):            3.313e-05
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0076
+Time:                        12:59:49   Log-likelihood                    1683.1
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      4.3565
+Entities:                       73811   P-value                           0.0006
+Avg Obs:                       0.0818   Distribution:                  F(5,6029)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             5.0270
+                                        P-value                           0.0001
+Time periods:                       5   Distribution:                  F(5,6029)
+Avg Obs:                       1207.0                                           
+Min Obs:                       1015.0                                           
+Max Obs:                       1365.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.1604     0.0138     11.619     0.0000      0.1334      0.1875
+Zahranicny_vlastnik_FDI        -0.0452     0.0149    -3.0414     0.0024     -0.0743     -0.0161
+Vlastnik_PO                    -0.0093     0.0153    -0.6059     0.5446     -0.0393      0.0207
+Koncentracia_vlastnictva_h3    -0.0004     0.0003    -1.3801     0.1676     -0.0009      0.0002
+Jednoosobova_SRO                0.0265     0.0169     1.5680     0.1169     -0.0066      0.0596
+Statny_vlastnik                -0.0233     0.0225    -1.0355     0.3005     -0.0674      0.0208
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0033
+Estimator:              RandomEffects   R-squared (Between):              0.0146
+No. Observations:                6035   R-squared (Within):              -0.0001
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0070
+Time:                        12:59:50   Log-likelihood                    1682.7
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      3.9805
+Entities:                       73811   P-value                           0.0013
+Avg Obs:                       0.0818   Distribution:                  F(5,6029)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             4.6500
+                                        P-value                           0.0003
+Time periods:                       5   Distribution:                  F(5,6029)
+Avg Obs:                       1207.0                                           
+Min Obs:                       1015.0                                           
+Max Obs:                       1365.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.1507     0.0351     4.2940     0.0000      0.0819      0.2195
+Zahranicny_vlastnik_FDI        -0.0456     0.0149    -3.0653     0.0022     -0.0747     -0.0164
+Vlastnik_PO                    -0.0226     0.0118    -1.9138     0.0557     -0.0458      0.0006
+Koncentracia_vlastnictva_t3  -7.15e-05     0.0004    -0.1926     0.8472     -0.0008      0.0007
+Jednoosobova_SRO                0.0077     0.0098     0.7818     0.4344     -0.0115      0.0269
+Statny_vlastnik                -0.0279     0.0222    -1.2552     0.2095     -0.0715      0.0157
+===============================================================================================
+\ROA
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0030
+Estimator:              RandomEffects   R-squared (Between):              0.0153
+No. Observations:                6416   R-squared (Within):              -0.0002
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0083
+Time:                        12:59:50   Log-likelihood                    7595.0
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      3.8114
+Entities:                       77391   P-value                           0.0019
+Avg Obs:                       0.0829   Distribution:                  F(5,6410)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             5.4138
+                                        P-value                           0.0001
+Time periods:                       5   Distribution:                  F(5,6410)
+Avg Obs:                       1283.2                                           
+Min Obs:                       1065.0                                           
+Max Obs:                       1438.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0737     0.0052     14.119     0.0000      0.0635      0.0839
+Zahranicny_vlastnik_FDI        -0.0217     0.0056    -3.9022     0.0001     -0.0326     -0.0108
+Vlastnik_PO                    -0.0035     0.0058    -0.6038     0.5460     -0.0149      0.0079
+Koncentracia_vlastnictva_h3    -0.0002  9.844e-05    -1.7450     0.0810     -0.0004    2.12e-05
+Jednoosobova_SRO                0.0059     0.0064     0.9240     0.3555     -0.0066      0.0185
+Statny_vlastnik                -0.0029     0.0087    -0.3306     0.7410     -0.0199      0.0141
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0030
+Estimator:              RandomEffects   R-squared (Between):              0.0151
+No. Observations:                6416   R-squared (Within):              -0.0001
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0082
+Time:                        12:59:50   Log-likelihood                    7595.4
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      3.8108
+Entities:                       77391   P-value                           0.0019
+Avg Obs:                       0.0829   Distribution:                  F(5,6410)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             5.4124
+                                        P-value                           0.0001
+Time periods:                       5   Distribution:                  F(5,6410)
+Avg Obs:                       1283.2                                           
+Min Obs:                       1065.0                                           
+Max Obs:                       1438.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0886     0.0133     6.6602     0.0000      0.0625      0.1147
+Zahranicny_vlastnik_FDI        -0.0218     0.0056    -3.9301     0.0001     -0.0327     -0.0109
+Vlastnik_PO                    -0.0086     0.0045    -1.9245     0.0543     -0.0174      0.0002
+Koncentracia_vlastnictva_t3    -0.0002     0.0001    -1.7452     0.0810     -0.0005   3.028e-05
+Jednoosobova_SRO               -0.0016     0.0037    -0.4370     0.6621     -0.0089      0.0056
+Statny_vlastnik                -0.0050     0.0086    -0.5784     0.5630     -0.0218      0.0119
+===============================================================================================
+
+                                         Analyzing section B 
+
+
+ROE
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0142
+Estimator:              RandomEffects   R-squared (Between):              0.0479
+No. Observations:                 293   R-squared (Within):               0.0011
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0225
+Time:                        12:59:51   Log-likelihood                    67.041
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      0.8259
+Entities:                       73769   P-value                           0.5321
+Avg Obs:                       0.0040   Distribution:                   F(5,287)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             0.7263
+                                        P-value                           0.6042
+Time periods:                       5   Distribution:                   F(5,287)
+Avg Obs:                       58.600                                           
+Min Obs:                       52.000                                           
+Max Obs:                       63.000                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0224     0.0788     0.2846     0.7761     -0.1327      0.1775
+Zahranicny_vlastnik_FDI        -0.0509     0.0601    -0.8463     0.3981     -0.1693      0.0675
+Vlastnik_PO                     0.0897     0.0714     1.2562     0.2101     -0.0509      0.2304
+Koncentracia_vlastnictva_h3     0.0003     0.0013     0.2587     0.7960     -0.0023      0.0030
+Jednoosobova_SRO                0.0580     0.0826     0.7018     0.4834     -0.1047      0.2207
+Statny_vlastnik                -0.0663     0.1308    -0.5068     0.6127     -0.3238      0.1912
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0167
+Estimator:              RandomEffects   R-squared (Between):              0.0544
+No. Observations:                 293   R-squared (Within):               0.0041
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0203
+Time:                        12:59:51   Log-likelihood                    67.528
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      0.9726
+Entities:                       73769   P-value                           0.4348
+Avg Obs:                       0.0040   Distribution:                   F(5,287)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             0.8728
+                                        P-value                           0.4997
+Time periods:                       5   Distribution:                   F(5,287)
+Avg Obs:                       58.600                                           
+Min Obs:                       52.000                                           
+Max Obs:                       63.000                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.3594     0.3596     0.9993     0.3185     -0.3484      1.0672
+Zahranicny_vlastnik_FDI        -0.0426     0.0600    -0.7101     0.4782     -0.1607      0.0755
+Vlastnik_PO                     0.1014     0.0577     1.7569     0.0800     -0.0122      0.2149
+Koncentracia_vlastnictva_t3    -0.0033     0.0037    -0.8932     0.3725     -0.0105      0.0039
+Jednoosobova_SRO                0.0822     0.0532     1.5455     0.1233     -0.0225      0.1868
+Statny_vlastnik                -0.0655     0.1301    -0.5039     0.6147     -0.3215      0.1905
+===============================================================================================
+\ROA
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0118
+Estimator:              RandomEffects   R-squared (Between):              0.0456
+No. Observations:                 291   R-squared (Within):              -0.0032
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0251
+Time:                        12:59:52   Log-likelihood                    377.63
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      0.6819
+Entities:                       77350   P-value                           0.6375
+Avg Obs:                       0.0038   Distribution:                   F(5,285)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             0.5426
+                                        P-value                           0.7439
+Time periods:                       5   Distribution:                   F(5,285)
+Avg Obs:                       58.200                                           
+Min Obs:                       51.000                                           
+Max Obs:                       64.000                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                          -0.0021     0.0306    -0.0701     0.9441     -0.0624      0.0582
+Zahranicny_vlastnik_FDI        -0.0154     0.0228    -0.6767     0.4992     -0.0602      0.0294
+Vlastnik_PO                    -0.0026     0.0280    -0.0916     0.9271     -0.0577      0.0526
+Koncentracia_vlastnictva_h3     0.0006     0.0005     1.1755     0.2408     -0.0004      0.0017
+Jednoosobova_SRO               -0.0108     0.0316    -0.3414     0.7330     -0.0730      0.0514
+Statny_vlastnik                -0.0013     0.0508    -0.0257     0.9796     -0.1013      0.0986
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0101
+Estimator:              RandomEffects   R-squared (Between):              0.0468
+No. Observations:                 291   R-squared (Within):              -0.0049
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0193
+Time:                        12:59:52   Log-likelihood                    377.53
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      0.5793
+Entities:                       77350   P-value                           0.7158
+Avg Obs:                       0.0038   Distribution:                   F(5,285)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             0.4405
+                                        P-value                           0.8200
+Time periods:                       5   Distribution:                   F(5,285)
+Avg Obs:                       58.200                                           
+Min Obs:                       51.000                                           
+Max Obs:                       64.000                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                          -0.1112     0.1510    -0.7364     0.4621     -0.4084      0.1860
+Zahranicny_vlastnik_FDI        -0.0145     0.0228    -0.6350     0.5259     -0.0593      0.0304
+Vlastnik_PO                     0.0160     0.0215     0.7448     0.4570     -0.0263      0.0583
+Koncentracia_vlastnictva_t3     0.0015     0.0016     0.9378     0.3492     -0.0016      0.0045
+Jednoosobova_SRO                0.0149     0.0194     0.7684     0.4429     -0.0233      0.0532
+Statny_vlastnik                -0.0104     0.0504    -0.2061     0.8369     -0.1097      0.0889
+===============================================================================================
+
+                                         Analyzing section C 
+
+
+ROE
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0018
+Estimator:              RandomEffects   R-squared (Between):              0.0014
+No. Observations:               37093   R-squared (Within):               0.0002
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0007
+Time:                        12:59:53   Log-likelihood                 1.037e+04
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      13.288
+Entities:                       73885   P-value                           0.0000
+Avg Obs:                       0.5020   Distribution:                 F(5,37087)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             3.5350
+                                        P-value                           0.0034
+Time periods:                       5   Distribution:                 F(5,37087)
+Avg Obs:                       7418.6                                           
+Min Obs:                       6695.0                                           
+Max Obs:                       8005.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.1472     0.0074     19.782     0.0000      0.1326      0.1618
+Zahranicny_vlastnik_FDI         0.0092     0.0059     1.5514     0.1208     -0.0024      0.0208
+Vlastnik_PO                    -0.0205     0.0078    -2.6420     0.0082     -0.0358     -0.0053
+Koncentracia_vlastnictva_h3     0.0002     0.0001     1.1989     0.2306     -0.0001      0.0004
+Jednoosobova_SRO               -0.0011     0.0081    -0.1386     0.8898     -0.0171      0.0148
+Statny_vlastnik                -0.0892     0.0717    -1.2439     0.2135     -0.2298      0.0514
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0020
+Estimator:              RandomEffects   R-squared (Between):              0.0017
+No. Observations:               37093   R-squared (Within):               0.0003
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0010
+Time:                        12:59:53   Log-likelihood                 1.037e+04
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      14.536
+Entities:                       73885   P-value                           0.0000
+Avg Obs:                       0.5020   Distribution:                 F(5,37087)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             4.7823
+                                        P-value                           0.0002
+Time periods:                       5   Distribution:                 F(5,37087)
+Avg Obs:                       7418.6                                           
+Min Obs:                       6695.0                                           
+Max Obs:                       8005.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0804     0.0272     2.9549     0.0031      0.0271      0.1338
+Zahranicny_vlastnik_FDI         0.0099     0.0059     1.6697     0.0950     -0.0017      0.0214
+Vlastnik_PO                    -0.0165     0.0059    -2.8107     0.0049     -0.0279     -0.0050
+Koncentracia_vlastnictva_t3     0.0008     0.0003     2.7694     0.0056      0.0002      0.0013
+Jednoosobova_SRO                0.0050     0.0042     1.1991     0.2305     -0.0032      0.0133
+Statny_vlastnik                -0.0871     0.0717    -1.2151     0.2243     -0.2276      0.0534
+===============================================================================================
+\ROA
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0038
+Estimator:              RandomEffects   R-squared (Between):              0.0007
+No. Observations:               38364   R-squared (Within):           -1.288e-05
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0005
+Time:                        12:59:54   Log-likelihood                 4.492e+04
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      29.626
+Entities:                       77463   P-value                           0.0000
+Avg Obs:                       0.4953   Distribution:                 F(5,38358)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             1.4090
+                                        P-value                           0.2173
+Time periods:                       5   Distribution:                 F(5,38358)
+Avg Obs:                       7672.8                                           
+Min Obs:                       7036.0                                           
+Max Obs:                       8226.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0731     0.0028     25.874     0.0000      0.0675      0.0786
+Zahranicny_vlastnik_FDI         0.0038     0.0022     1.7213     0.0852     -0.0005      0.0082
+Vlastnik_PO                    -0.0008     0.0029    -0.2770     0.7817     -0.0066      0.0049
+Koncentracia_vlastnictva_h3 -4.437e-05  5.236e-05    -0.8475     0.3967     -0.0001   5.825e-05
+Jednoosobova_SRO                0.0036     0.0031     1.1570     0.2473     -0.0025      0.0096
+Statny_vlastnik                -0.0356     0.0257    -1.3859     0.1658     -0.0859      0.0147
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0039
+Estimator:              RandomEffects   R-squared (Between):              0.0007
+No. Observations:               38364   R-squared (Within):           -2.637e-05
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0005
+Time:                        12:59:54   Log-likelihood                 4.492e+04
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      29.663
+Entities:                       77463   P-value                           0.0000
+Avg Obs:                       0.4953   Distribution:                 F(5,38358)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             1.4458
+                                        P-value                           0.2042
+Time periods:                       5   Distribution:                 F(5,38358)
+Avg Obs:                       7672.8                                           
+Min Obs:                       7036.0                                           
+Max Obs:                       8226.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0609     0.0106     5.7706     0.0000      0.0402      0.0816
+Zahranicny_vlastnik_FDI         0.0038     0.0022     1.6926     0.0905     -0.0006      0.0081
+Vlastnik_PO                    -0.0027     0.0022    -1.2339     0.2172     -0.0071      0.0016
+Koncentracia_vlastnictva_t3     0.0001     0.0001     0.9494     0.3424     -0.0001      0.0003
+Jednoosobova_SRO                0.0010     0.0016     0.6437     0.5198     -0.0021      0.0042
+Statny_vlastnik                -0.0361     0.0257    -1.4055     0.1599     -0.0864      0.0142
+===============================================================================================
+
+                                         Analyzing section D 
+
+
+ROE
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0359
+Estimator:              RandomEffects   R-squared (Between):              0.0699
+No. Observations:                2695   R-squared (Within):               0.0041
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0592
+Time:                        12:59:55   Log-likelihood                    954.13
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      20.027
+Entities:                       73857   P-value                           0.0000
+Avg Obs:                       0.0365   Distribution:                  F(5,2689)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             12.898
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                  F(5,2689)
+Avg Obs:                       539.00                                           
+Min Obs:                       397.00                                           
+Max Obs:                       621.00                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.2989     0.0265     11.295     0.0000      0.2470      0.3508
+Zahranicny_vlastnik_FDI        -0.0471     0.0250    -1.8827     0.0599     -0.0961      0.0020
+Vlastnik_PO                     0.0336     0.0267     1.2581     0.2085     -0.0188      0.0860
+Koncentracia_vlastnictva_h3    -0.0010     0.0004    -2.1767     0.0296     -0.0019   -9.69e-05
+Jednoosobova_SRO               -0.0230     0.0311    -0.7399     0.4594     -0.0840      0.0380
+Statny_vlastnik                -0.1586     0.0246    -6.4458     0.0000     -0.2069     -0.1104
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0357
+Estimator:              RandomEffects   R-squared (Between):              0.0711
+No. Observations:                2695   R-squared (Within):               0.0035
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0587
+Time:                        12:59:55   Log-likelihood                    953.10
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      19.928
+Entities:                       73857   P-value                           0.0000
+Avg Obs:                       0.0365   Distribution:                  F(5,2689)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             12.794
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                  F(5,2689)
+Avg Obs:                       539.00                                           
+Min Obs:                       397.00                                           
+Max Obs:                       621.00                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.4668     0.1066     4.3781     0.0000      0.2577      0.6759
+Zahranicny_vlastnik_FDI        -0.0490     0.0250    -1.9634     0.0497     -0.0980  -6.481e-05
+Vlastnik_PO                     0.0029     0.0201     0.1447     0.8849     -0.0366      0.0424
+Koncentracia_vlastnictva_t3    -0.0022     0.0011    -2.0365     0.0418     -0.0044  -8.342e-05
+Jednoosobova_SRO               -0.0648     0.0212    -3.0601     0.0022     -0.1063     -0.0233
+Statny_vlastnik                -0.1652     0.0244    -6.7749     0.0000     -0.2130     -0.1174
+===============================================================================================
+\ROA
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0233
+Estimator:              RandomEffects   R-squared (Between):              0.0575
+No. Observations:                3664   R-squared (Within):               0.0034
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0445
+Time:                        12:59:56   Log-likelihood                    6272.8
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      17.481
+Entities:                       77435   P-value                           0.0000
+Avg Obs:                       0.0473   Distribution:                  F(5,3658)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             14.199
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                  F(5,3658)
+Avg Obs:                       732.80                                           
+Min Obs:                       559.00                                           
+Max Obs:                       803.00                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0712     0.0047     15.129     0.0000      0.0619      0.0804
+Zahranicny_vlastnik_FDI        -0.0042     0.0044    -0.9536     0.3403     -0.0128      0.0044
+Vlastnik_PO                     0.0100     0.0048     2.0828     0.0373      0.0006      0.0194
+Koncentracia_vlastnictva_h3    -0.0002  8.036e-05    -2.6640     0.0078     -0.0004  -5.652e-05
+Jednoosobova_SRO               -0.0012     0.0057    -0.2133     0.8311     -0.0124      0.0100
+Statny_vlastnik                -0.0334     0.0048    -6.9249     0.0000     -0.0429     -0.0240
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0226
+Estimator:              RandomEffects   R-squared (Between):              0.0573
+No. Observations:                3664   R-squared (Within):               0.0024
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0440
+Time:                        12:59:56   Log-likelihood                    6271.0
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      16.879
+Entities:                       77435   P-value                           0.0000
+Avg Obs:                       0.0473   Distribution:                  F(5,3658)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             13.599
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                  F(5,3658)
+Avg Obs:                       732.80                                           
+Min Obs:                       559.00                                           
+Max Obs:                       803.00                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0986     0.0187     5.2669     0.0000      0.0619      0.1353
+Zahranicny_vlastnik_FDI        -0.0043     0.0044    -0.9701     0.3321     -0.0129      0.0043
+Vlastnik_PO                     0.0029     0.0036     0.7946     0.4269     -0.0042      0.0100
+Koncentracia_vlastnictva_t3    -0.0004     0.0002    -2.0291     0.0425     -0.0008  -1.328e-05
+Jednoosobova_SRO               -0.0107     0.0040    -2.6993     0.0070     -0.0185     -0.0029
+Statny_vlastnik                -0.0349     0.0048    -7.2822     0.0000     -0.0443     -0.0255
+===============================================================================================
+
+                                         Analyzing section E 
+
+
+ROE
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0127
+Estimator:              RandomEffects   R-squared (Between):              0.0205
+No. Observations:                2570   R-squared (Within):               0.0032
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0151
+Time:                        12:59:57   Log-likelihood                    530.28
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      6.6012
+Entities:                       73759   P-value                           0.0000
+Avg Obs:                       0.0348   Distribution:                  F(5,2564)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             4.2047
+                                        P-value                           0.0008
+Time periods:                       5   Distribution:                  F(5,2564)
+Avg Obs:                       514.00                                           
+Min Obs:                       420.00                                           
+Max Obs:                       573.00                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.1619     0.0270     5.9946     0.0000      0.1089      0.2148
+Zahranicny_vlastnik_FDI         0.0103     0.0275     0.3755     0.7074     -0.0436      0.0643
+Vlastnik_PO                    -0.0224     0.0281    -0.7983     0.4248     -0.0774      0.0326
+Koncentracia_vlastnictva_h3 -5.425e-05     0.0005    -0.1181     0.9060     -0.0010      0.0008
+Jednoosobova_SRO                0.0524     0.0292     1.7942     0.0729     -0.0049      0.1097
+Statny_vlastnik                -0.0105     0.0261    -0.4007     0.6887     -0.0616      0.0407
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0141
+Estimator:              RandomEffects   R-squared (Between):              0.0252
+No. Observations:                2570   R-squared (Within):               0.0031
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0192
+Time:                        12:59:57   Log-likelihood                    530.06
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      7.3442
+Entities:                       73759   P-value                           0.0000
+Avg Obs:                       0.0348   Distribution:                  F(5,2564)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             4.9409
+                                        P-value                           0.0002
+Time periods:                       5   Distribution:                  F(5,2564)
+Avg Obs:                       514.00                                           
+Min Obs:                       420.00                                           
+Max Obs:                       573.00                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                          -0.0383     0.1050    -0.3648     0.7153     -0.2442      0.1676
+Zahranicny_vlastnik_FDI         0.0087     0.0274     0.3160     0.7520     -0.0451      0.0624
+Vlastnik_PO                    -0.0252     0.0225    -1.1222     0.2619     -0.0693      0.0189
+Koncentracia_vlastnictva_t3     0.0020     0.0011     1.8984     0.0578  -6.647e-05      0.0041
+Jednoosobova_SRO                0.0456     0.0181     2.5125     0.0120      0.0100      0.0812
+Statny_vlastnik                -0.0101     0.0260    -0.3866     0.6991     -0.0611      0.0410
+===============================================================================================
+\ROA
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0083
+Estimator:              RandomEffects   R-squared (Between):              0.0178
+No. Observations:                2637   R-squared (Within):               0.0010
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0125
+Time:                        12:59:57   Log-likelihood                    2965.4
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      4.4044
+Entities:                       77440   P-value                           0.0005
+Avg Obs:                       0.0341   Distribution:                  F(5,2631)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             3.1090
+                                        P-value                           0.0084
+Time periods:                       5   Distribution:                  F(5,2631)
+Avg Obs:                       527.40                                           
+Min Obs:                       438.00                                           
+Max Obs:                       587.00                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0811     0.0101     8.0083     0.0000      0.0613      0.1010
+Zahranicny_vlastnik_FDI         0.0090     0.0104     0.8704     0.3842     -0.0113      0.0293
+Vlastnik_PO                     0.0032     0.0102     0.3104     0.7563     -0.0169      0.0232
+Koncentracia_vlastnictva_h3    -0.0002     0.0002    -1.4090     0.1590     -0.0006   9.464e-05
+Jednoosobova_SRO                0.0213     0.0108     1.9745     0.0484      0.0001      0.0424
+Statny_vlastnik                -0.0140     0.0097    -1.4369     0.1509     -0.0331      0.0051
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0085
+Estimator:              RandomEffects   R-squared (Between):              0.0190
+No. Observations:                2637   R-squared (Within):               0.0003
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0152
+Time:                        12:59:58   Log-likelihood                    2965.1
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      4.5000
+Entities:                       77440   P-value                           0.0004
+Avg Obs:                       0.0341   Distribution:                  F(5,2631)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             3.2047
+                                        P-value                           0.0069
+Time periods:                       5   Distribution:                  F(5,2631)
+Avg Obs:                       527.40                                           
+Min Obs:                       438.00                                           
+Max Obs:                       587.00                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0065     0.0402     0.1625     0.8709     -0.0723      0.0854
+Zahranicny_vlastnik_FDI         0.0090     0.0103     0.8658     0.3867     -0.0113      0.0292
+Vlastnik_PO                    -0.0050     0.0084    -0.5993     0.5490     -0.0214      0.0114
+Koncentracia_vlastnictva_t3     0.0006     0.0004     1.5646     0.1178     -0.0002      0.0014
+Jednoosobova_SRO                0.0082     0.0067     1.2283     0.2194     -0.0049      0.0214
+Statny_vlastnik                -0.0146     0.0097    -1.4985     0.1341     -0.0336      0.0045
+===============================================================================================
+
+                                         Analyzing section F 
+
+
+ROE
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0074
+Estimator:              RandomEffects   R-squared (Between):              0.0117
+No. Observations:               26900   R-squared (Within):               0.0003
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0068
+Time:                        12:59:58   Log-likelihood                    4941.5
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      39.916
+Entities:                       73888   P-value                           0.0000
+Avg Obs:                       0.3641   Distribution:                 F(5,26894)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             19.489
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                 F(5,26894)
+Avg Obs:                       5380.0                                           
+Min Obs:                       4806.0                                           
+Max Obs:                       5836.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.1327     0.0105     12.649     0.0000      0.1122      0.1533
+Zahranicny_vlastnik_FDI        -0.0390     0.0083    -4.6882     0.0000     -0.0553     -0.0227
+Vlastnik_PO                    -0.0110     0.0109    -1.0062     0.3143     -0.0324      0.0104
+Koncentracia_vlastnictva_h3    -0.0001     0.0002    -0.5090     0.6107     -0.0005      0.0003
+Jednoosobova_SRO                0.0331     0.0108     3.0821     0.0021      0.0121      0.0542
+Statny_vlastnik                -0.0410     0.0535    -0.7664     0.4434     -0.1459      0.0639
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0074
+Estimator:              RandomEffects   R-squared (Between):              0.0116
+No. Observations:               26900   R-squared (Within):               0.0003
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0067
+Time:                        12:59:58   Log-likelihood                    4942.0
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      39.873
+Entities:                       73888   P-value                           0.0000
+Avg Obs:                       0.3641   Distribution:                 F(5,26894)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             19.446
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                 F(5,26894)
+Avg Obs:                       5380.0                                           
+Min Obs:                       4806.0                                           
+Max Obs:                       5836.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.1202     0.0318     3.7802     0.0002      0.0579      0.1825
+Zahranicny_vlastnik_FDI        -0.0385     0.0084    -4.6092     0.0000     -0.0549     -0.0221
+Vlastnik_PO                    -0.0150     0.0081    -1.8546     0.0637     -0.0308      0.0009
+Koncentracia_vlastnictva_t3  7.695e-05     0.0003     0.2378     0.8120     -0.0006      0.0007
+Jednoosobova_SRO                0.0280     0.0045     6.1965     0.0000      0.0191      0.0368
+Statny_vlastnik                -0.0414     0.0535    -0.7729     0.4396     -0.1463      0.0635
+===============================================================================================
+\ROA
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0079
+Estimator:              RandomEffects   R-squared (Between):              0.0107
+No. Observations:               28756   R-squared (Within):              -0.0002
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0055
+Time:                        12:59:59   Log-likelihood                 3.244e+04
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      45.711
+Entities:                       77466   P-value                           0.0000
+Avg Obs:                       0.3712   Distribution:                 F(5,28750)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             17.496
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                 F(5,28750)
+Avg Obs:                       5751.2                                           
+Min Obs:                       5154.0                                           
+Max Obs:                       6210.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0581     0.0036     16.353     0.0000      0.0512      0.0651
+Zahranicny_vlastnik_FDI        -0.0052     0.0028    -1.8411     0.0656     -0.0107      0.0003
+Vlastnik_PO                    -0.0120     0.0037    -3.2611     0.0011     -0.0191     -0.0048
+Koncentracia_vlastnictva_h3 -6.794e-05  6.664e-05    -1.0194     0.3080     -0.0002   6.268e-05
+Jednoosobova_SRO                0.0100     0.0036     2.7468     0.0060      0.0029      0.0172
+Statny_vlastnik                -0.0035     0.0179    -0.1937     0.8464     -0.0385      0.0315
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0079
+Estimator:              RandomEffects   R-squared (Between):              0.0106
+No. Observations:               28756   R-squared (Within):              -0.0002
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0054
+Time:                        12:59:59   Log-likelihood                 3.244e+04
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      45.668
+Entities:                       77466   P-value                           0.0000
+Avg Obs:                       0.3712   Distribution:                 F(5,28750)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             17.453
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                 F(5,28750)
+Avg Obs:                       5751.2                                           
+Min Obs:                       5154.0                                           
+Max Obs:                       6210.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0448     0.0110     4.0798     0.0000      0.0233      0.0663
+Zahranicny_vlastnik_FDI        -0.0048     0.0028    -1.6805     0.0929     -0.0103      0.0008
+Vlastnik_PO                    -0.0148     0.0027    -5.4309     0.0000     -0.0201     -0.0094
+Koncentracia_vlastnictva_t3     0.0001     0.0001     0.9093     0.3632     -0.0001      0.0003
+Jednoosobova_SRO                0.0064     0.0015     4.1772     0.0000      0.0034      0.0094
+Statny_vlastnik                -0.0034     0.0179    -0.1923     0.8475     -0.0384      0.0316
+===============================================================================================
+
+                                         Analyzing section G 
+
+
+ROE
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0002
+Estimator:              RandomEffects   R-squared (Between):              0.0022
+No. Observations:               70210   R-squared (Within):              -0.0001
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0009
+Time:                        13:00:00   Log-likelihood                 1.876e+04
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      3.2225
+Entities:                       73889   P-value                           0.0065
+Avg Obs:                       0.9502   Distribution:                 F(5,70204)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             6.8619
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                 F(5,70204)
+Avg Obs:                    1.404e+04                                           
+Min Obs:                    1.252e+04                                           
+Max Obs:                    1.519e+04                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.1168     0.0063     18.678     0.0000      0.1045      0.1290
+Zahranicny_vlastnik_FDI        -0.0178     0.0039    -4.5010     0.0000     -0.0255     -0.0100
+Vlastnik_PO                     0.0086     0.0062     1.3769     0.1686     -0.0036      0.0207
+Koncentracia_vlastnictva_h3     0.0002     0.0001     1.5538     0.1202  -4.643e-05      0.0004
+Jednoosobova_SRO               -0.0024     0.0064    -0.3846     0.7005     -0.0149      0.0100
+Statny_vlastnik                -0.1125     0.0755    -1.4893     0.1364     -0.2605      0.0355
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0005
+Estimator:              RandomEffects   R-squared (Between):              0.0030
+No. Observations:               70210   R-squared (Within):           -6.744e-05
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0013
+Time:                        13:00:01   Log-likelihood                 1.876e+04
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      6.9937
+Entities:                       73889   P-value                           0.0000
+Avg Obs:                       0.9502   Distribution:                 F(5,70204)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             10.641
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                 F(5,70204)
+Avg Obs:                    1.404e+04                                           
+Min Obs:                    1.252e+04                                           
+Max Obs:                    1.519e+04                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0202     0.0230     0.8755     0.3813     -0.0250      0.0653
+Zahranicny_vlastnik_FDI        -0.0163     0.0040    -4.1042     0.0000     -0.0240     -0.0085
+Vlastnik_PO                     0.0126     0.0044     2.8577     0.0043      0.0040      0.0213
+Koncentracia_vlastnictva_t3     0.0011     0.0002     4.6130     0.0000      0.0006      0.0015
+Jednoosobova_SRO                0.0039     0.0030     1.3174     0.1877     -0.0019      0.0098
+Statny_vlastnik                -0.1096     0.0755    -1.4521     0.1465     -0.2576      0.0383
+===============================================================================================
+\ROA
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0029
+Estimator:              RandomEffects   R-squared (Between):              0.0013
+No. Observations:               74587   R-squared (Within):               0.0002
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0004
+Time:                        13:00:02   Log-likelihood                 9.081e+04
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      42.807
+Entities:                       77468   P-value                           0.0000
+Avg Obs:                       0.9628   Distribution:                 F(5,74581)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             6.2004
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                 F(5,74581)
+Avg Obs:                    1.492e+04                                           
+Min Obs:                    1.344e+04                                           
+Max Obs:                    1.606e+04                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0548     0.0022     24.496     0.0000      0.0504      0.0592
+Zahranicny_vlastnik_FDI        -0.0053     0.0014    -3.8070     0.0001     -0.0081     -0.0026
+Vlastnik_PO                    -0.0029     0.0022    -1.3174     0.1877     -0.0073      0.0014
+Koncentracia_vlastnictva_h3  5.425e-05  4.098e-05     1.3237     0.1856  -2.608e-05      0.0001
+Jednoosobova_SRO               -0.0013     0.0023    -0.5880     0.5565     -0.0058      0.0031
+Statny_vlastnik                -0.0498     0.0248    -2.0098     0.0445     -0.0984     -0.0012
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0030
+Estimator:              RandomEffects   R-squared (Between):              0.0016
+No. Observations:               74587   R-squared (Within):               0.0002
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0005
+Time:                        13:00:02   Log-likelihood                 9.081e+04
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      44.335
+Entities:                       77468   P-value                           0.0000
+Avg Obs:                       0.9628   Distribution:                 F(5,74581)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             7.7247
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                 F(5,74581)
+Avg Obs:                    1.492e+04                                           
+Min Obs:                    1.344e+04                                           
+Max Obs:                    1.606e+04                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0322     0.0083     3.8697     0.0001      0.0159      0.0485
+Zahranicny_vlastnik_FDI        -0.0050     0.0014    -3.5679     0.0004     -0.0077     -0.0023
+Vlastnik_PO                    -0.0015     0.0016    -0.9358     0.3494     -0.0045      0.0016
+Koncentracia_vlastnictva_t3     0.0003  8.456e-05     3.0609     0.0022   9.309e-05      0.0004
+Jednoosobova_SRO                0.0008     0.0011     0.7308     0.4649     -0.0013      0.0029
+Statny_vlastnik                -0.0491     0.0248    -1.9797     0.0477     -0.0977     -0.0005
+===============================================================================================
+
+                                         Analyzing section H 
+
+
+ROE
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0087
+Estimator:              RandomEffects   R-squared (Between):              0.0130
+No. Observations:                7776   R-squared (Within):              -0.0002
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0096
+Time:                        13:00:03   Log-likelihood                    1477.5
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      13.566
+Entities:                       73891   P-value                           0.0000
+Avg Obs:                       0.1052   Distribution:                  F(5,7770)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             5.8039
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                  F(5,7770)
+Avg Obs:                       1555.2                                           
+Min Obs:                       1372.0                                           
+Max Obs:                       1703.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.2063     0.0216     9.5400     0.0000      0.1639      0.2486
+Zahranicny_vlastnik_FDI         0.0367     0.0159     2.3073     0.0211      0.0055      0.0678
+Vlastnik_PO                     0.0129     0.0215     0.6005     0.5482     -0.0292      0.0551
+Koncentracia_vlastnictva_h3    -0.0006     0.0004    -1.4484     0.1476     -0.0013      0.0002
+Jednoosobova_SRO                0.0354     0.0217     1.6372     0.1016     -0.0070      0.0779
+Statny_vlastnik                -0.1728     0.0433    -3.9925     0.0001     -0.2577     -0.0880
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0084
+Estimator:              RandomEffects   R-squared (Between):              0.0113
+No. Observations:                7776   R-squared (Within):            5.496e-05
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0088
+Time:                        13:00:03   Log-likelihood                    1478.4
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      13.132
+Entities:                       73891   P-value                           0.0000
+Avg Obs:                       0.1052   Distribution:                  F(5,7770)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             5.3752
+                                        P-value                           0.0001
+Time periods:                       5   Distribution:                  F(5,7770)
+Avg Obs:                       1555.2                                           
+Min Obs:                       1372.0                                           
+Max Obs:                       1703.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.1785     0.0997     1.7910     0.0733     -0.0169      0.3739
+Zahranicny_vlastnik_FDI         0.0375     0.0159     2.3600     0.0183      0.0064      0.0687
+Vlastnik_PO                    -0.0091     0.0152    -0.6006     0.5481     -0.0390      0.0207
+Koncentracia_vlastnictva_t3 -1.451e-05     0.0010    -0.0144     0.9885     -0.0020      0.0020
+Jednoosobova_SRO                0.0075     0.0098     0.7572     0.4489     -0.0118      0.0267
+Statny_vlastnik                -0.1730     0.0433    -3.9924     0.0001     -0.2579     -0.0880
+===============================================================================================
+\ROA
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0112
+Estimator:              RandomEffects   R-squared (Between):              0.0200
+No. Observations:                8756   R-squared (Within):              -0.0003
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0119
+Time:                        13:00:04   Log-likelihood                 1.007e+04
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      19.878
+Entities:                       77470   P-value                           0.0000
+Avg Obs:                       0.1130   Distribution:                  F(5,8750)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             9.8075
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                  F(5,8750)
+Avg Obs:                       1751.2                                           
+Min Obs:                       1564.0                                           
+Max Obs:                       1907.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0795     0.0072     11.071     0.0000      0.0654      0.0935
+Zahranicny_vlastnik_FDI         0.0247     0.0052     4.7206     0.0000      0.0145      0.0350
+Vlastnik_PO                     0.0026     0.0071     0.3594     0.7193     -0.0114      0.0165
+Koncentracia_vlastnictva_h3    -0.0002     0.0001    -1.2305     0.2185     -0.0004   9.578e-05
+Jednoosobova_SRO                0.0109     0.0072     1.5214     0.1282     -0.0031      0.0249
+Statny_vlastnik                -0.0608     0.0150    -4.0619     0.0000     -0.0901     -0.0315
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0111
+Estimator:              RandomEffects   R-squared (Between):              0.0194
+No. Observations:                8756   R-squared (Within):              -0.0002
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0113
+Time:                        13:00:04   Log-likelihood                 1.007e+04
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      19.621
+Entities:                       77470   P-value                           0.0000
+Avg Obs:                       0.1130   Distribution:                  F(5,8750)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             9.5512
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                  F(5,8750)
+Avg Obs:                       1751.2                                           
+Min Obs:                       1564.0                                           
+Max Obs:                       1907.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0539     0.0342     1.5730     0.1158     -0.0133      0.1210
+Zahranicny_vlastnik_FDI         0.0249     0.0052     4.7630     0.0000      0.0147      0.0352
+Vlastnik_PO                    -0.0039     0.0050    -0.7819     0.4343     -0.0137      0.0059
+Koncentracia_vlastnictva_t3     0.0002     0.0003     0.5081     0.6114     -0.0005      0.0009
+Jednoosobova_SRO                0.0028     0.0032     0.8613     0.3891     -0.0035      0.0091
+Statny_vlastnik                -0.0610     0.0150    -4.0780     0.0000     -0.0904     -0.0317
+===============================================================================================
+
+                                         Analyzing section I 
+
+
+ROE
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0012
+Estimator:              RandomEffects   R-squared (Between):              0.0068
+No. Observations:                7245   R-squared (Within):               0.0005
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0045
+Time:                        13:00:05   Log-likelihood                    1964.4
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      1.7102
+Entities:                       73881   P-value                           0.1285
+Avg Obs:                       0.0981   Distribution:                  F(5,7239)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             3.6717
+                                        P-value                           0.0026
+Time periods:                       5   Distribution:                  F(5,7239)
+Avg Obs:                       1449.0                                           
+Min Obs:                       1168.0                                           
+Max Obs:                       1627.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0276     0.0187     1.4788     0.1392     -0.0090      0.0642
+Zahranicny_vlastnik_FDI        -0.0231     0.0128    -1.8067     0.0709     -0.0481      0.0020
+Vlastnik_PO                    -0.0181     0.0188    -0.9597     0.3372     -0.0550      0.0189
+Koncentracia_vlastnictva_h3     0.0003     0.0003     0.9087     0.3635     -0.0004      0.0010
+Jednoosobova_SRO                0.0086     0.0194     0.4464     0.6553     -0.0293      0.0466
+Statny_vlastnik                 0.0107     0.0531     0.2008     0.8408     -0.0934      0.1147
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0014
+Estimator:              RandomEffects   R-squared (Between):              0.0073
+No. Observations:                7245   R-squared (Within):               0.0005
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0050
+Time:                        13:00:05   Log-likelihood                    1964.3
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      1.9838
+Entities:                       73881   P-value                           0.0777
+Avg Obs:                       0.0981   Distribution:                  F(5,7239)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             3.9462
+                                        P-value                           0.0014
+Time periods:                       5   Distribution:                  F(5,7239)
+Avg Obs:                       1449.0                                           
+Min Obs:                       1168.0                                           
+Max Obs:                       1627.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                          -0.0526     0.0653    -0.8060     0.4203     -0.1806      0.0753
+Zahranicny_vlastnik_FDI        -0.0214     0.0128    -1.6705     0.0949     -0.0466      0.0037
+Vlastnik_PO                    -0.0083     0.0134    -0.6212     0.5345     -0.0345      0.0179
+Koncentracia_vlastnictva_t3     0.0010     0.0007     1.4790     0.1392     -0.0003      0.0023
+Jednoosobova_SRO                0.0222     0.0086     2.5681     0.0102      0.0052      0.0391
+Statny_vlastnik                 0.0144     0.0529     0.2725     0.7853     -0.0893      0.1181
+===============================================================================================
+\ROA
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0119
+Estimator:              RandomEffects   R-squared (Between):              0.0170
+No. Observations:                7689   R-squared (Within):              -0.0002
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0104
+Time:                        13:00:05   Log-likelihood                    9058.1
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      18.497
+Entities:                       77461   P-value                           0.0000
+Avg Obs:                       0.0993   Distribution:                  F(5,7683)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             8.3534
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                  F(5,7683)
+Avg Obs:                       1537.8                                           
+Min Obs:                       1289.0                                           
+Max Obs:                       1679.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0584     0.0067     8.6635     0.0000      0.0452      0.0716
+Zahranicny_vlastnik_FDI        -0.0234     0.0046    -5.0393     0.0000     -0.0325     -0.0143
+Vlastnik_PO                    -0.0035     0.0069    -0.5176     0.6047     -0.0170      0.0099
+Koncentracia_vlastnictva_h3    -0.0002     0.0001    -1.2515     0.2108     -0.0004    8.94e-05
+Jednoosobova_SRO                0.0105     0.0070     1.4930     0.1355     -0.0033      0.0243
+Statny_vlastnik                 0.0010     0.0209     0.0497     0.9603     -0.0399      0.0420
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0120
+Estimator:              RandomEffects   R-squared (Between):              0.0171
+No. Observations:                7689   R-squared (Within):              -0.0002
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0106
+Time:                        13:00:06   Log-likelihood                    9058.1
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      18.598
+Entities:                       77461   P-value                           0.0000
+Avg Obs:                       0.0993   Distribution:                  F(5,7683)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             8.4532
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                  F(5,7683)
+Avg Obs:                       1537.8                                           
+Min Obs:                       1289.0                                           
+Max Obs:                       1679.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0163     0.0240     0.6785     0.4974     -0.0308      0.0633
+Zahranicny_vlastnik_FDI        -0.0224     0.0047    -4.8002     0.0000     -0.0316     -0.0133
+Vlastnik_PO                    -0.0106     0.0048    -2.1942     0.0283     -0.0200     -0.0011
+Koncentracia_vlastnictva_t3     0.0004     0.0002     1.4347     0.1514     -0.0001      0.0008
+Jednoosobova_SRO                0.0018     0.0031     0.5628     0.5736     -0.0044      0.0079
+Statny_vlastnik                -0.0007     0.0208    -0.0322     0.9743     -0.0415      0.0402
+===============================================================================================
+
+                                         Analyzing section J 
+
+
+ROE
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0021
+Estimator:              RandomEffects   R-squared (Between):              0.0055
+No. Observations:               10090   R-squared (Within):            7.893e-05
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0033
+Time:                        13:00:06   Log-likelihood                    1677.5
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      4.2383
+Entities:                       73880   P-value                           0.0008
+Avg Obs:                       0.1366   Distribution:                 F(5,10084)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             3.1942
+                                        P-value                           0.0070
+Time periods:                       5   Distribution:                 F(5,10084)
+Avg Obs:                       2018.0                                           
+Min Obs:                       1798.0                                           
+Max Obs:                       2178.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.1665     0.0156     10.663     0.0000      0.1359      0.1971
+Zahranicny_vlastnik_FDI         0.0030     0.0121     0.2466     0.8053     -0.0208      0.0268
+Vlastnik_PO                    -0.0061     0.0159    -0.3840     0.7010     -0.0373      0.0251
+Koncentracia_vlastnictva_h3     0.0002     0.0003     0.6442     0.5194     -0.0004      0.0008
+Jednoosobova_SRO               -0.0308     0.0171    -1.8003     0.0718     -0.0644      0.0027
+Statny_vlastnik                -0.1774     0.0639    -2.7748     0.0055     -0.3027     -0.0521
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0021
+Estimator:              RandomEffects   R-squared (Between):              0.0055
+No. Observations:               10090   R-squared (Within):            6.798e-05
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0034
+Time:                        13:00:06   Log-likelihood                    1678.3
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      4.2458
+Entities:                       73880   P-value                           0.0007
+Avg Obs:                       0.1366   Distribution:                 F(5,10084)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             3.2007
+                                        P-value                           0.0069
+Time periods:                       5   Distribution:                 F(5,10084)
+Avg Obs:                       2018.0                                           
+Min Obs:                       1798.0                                           
+Max Obs:                       2178.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.1374     0.0573     2.3979     0.0165      0.0251      0.2496
+Zahranicny_vlastnik_FDI         0.0034     0.0121     0.2817     0.7781     -0.0204      0.0272
+Vlastnik_PO                    -0.0002     0.0117    -0.0178     0.9858     -0.0232      0.0228
+Koncentracia_vlastnictva_t3     0.0004     0.0006     0.6731     0.5009     -0.0008      0.0015
+Jednoosobova_SRO               -0.0224     0.0086    -2.6135     0.0090     -0.0393     -0.0056
+Statny_vlastnik                -0.1759     0.0639    -2.7523     0.0059     -0.3011     -0.0506
+===============================================================================================
+\ROA
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0063
+Estimator:              RandomEffects   R-squared (Between):              0.0040
+No. Observations:                9839   R-squared (Within):            5.203e-05
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0032
+Time:                        13:00:07   Log-likelihood                 1.037e+04
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      12.377
+Entities:                       77460   P-value                           0.0000
+Avg Obs:                       0.1270   Distribution:                  F(5,9833)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             2.6599
+                                        P-value                           0.0208
+Time periods:                       5   Distribution:                  F(5,9833)
+Avg Obs:                       1967.8                                           
+Min Obs:                       1767.0                                           
+Max Obs:                       2142.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0867     0.0061     14.257     0.0000      0.0748      0.0986
+Zahranicny_vlastnik_FDI         0.0015     0.0047     0.3172     0.7511     -0.0077      0.0106
+Vlastnik_PO                     0.0027     0.0062     0.4340     0.6643     -0.0094      0.0148
+Koncentracia_vlastnictva_h3    -0.0001     0.0001    -1.0655     0.2867     -0.0003      0.0001
+Jednoosobova_SRO                0.0016     0.0067     0.2426     0.8083     -0.0114      0.0147
+Statny_vlastnik                -0.0762     0.0247    -3.0891     0.0020     -0.1246     -0.0279
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0061
+Estimator:              RandomEffects   R-squared (Between):              0.0041
+No. Observations:                9839   R-squared (Within):           -7.871e-05
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0029
+Time:                        13:00:07   Log-likelihood                 1.037e+04
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      12.149
+Entities:                       77460   P-value                           0.0000
+Avg Obs:                       0.1270   Distribution:                  F(5,9833)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             2.4330
+                                        P-value                           0.0327
+Time periods:                       5   Distribution:                  F(5,9833)
+Avg Obs:                       1967.8                                           
+Min Obs:                       1767.0                                           
+Max Obs:                       2142.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0792     0.0227     3.4948     0.0005      0.0348      0.1237
+Zahranicny_vlastnik_FDI         0.0013     0.0047     0.2855     0.7753     -0.0078      0.0105
+Vlastnik_PO                    -0.0019     0.0045    -0.4105     0.6814     -0.0108      0.0070
+Koncentracia_vlastnictva_t3  1.604e-05     0.0002     0.0690     0.9450     -0.0004      0.0005
+Jednoosobova_SRO               -0.0046     0.0034    -1.3696     0.1708     -0.0112      0.0020
+Statny_vlastnik                -0.0773     0.0247    -3.1355     0.0017     -0.1257     -0.0290
+===============================================================================================
+
+                                         Analyzing section L 
+
+
+ROE
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0031
+Estimator:              RandomEffects   R-squared (Between):              0.0130
+No. Observations:               30859   R-squared (Within):              -0.0002
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0070
+Time:                        13:00:08   Log-likelihood                 1.124e+04
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      19.053
+Entities:                       73865   P-value                           0.0000
+Avg Obs:                       0.4178   Distribution:                 F(5,30853)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             22.395
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                 F(5,30853)
+Avg Obs:                       6171.8                                           
+Min Obs:                       5496.0                                           
+Max Obs:                       6698.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0719     0.0071     10.116     0.0000      0.0580      0.0859
+Zahranicny_vlastnik_FDI        -0.0284     0.0041    -6.8720     0.0000     -0.0365     -0.0203
+Vlastnik_PO                    -0.0082     0.0069    -1.1881     0.2348     -0.0218      0.0053
+Koncentracia_vlastnictva_h3    -0.0001     0.0001    -0.9832     0.3255     -0.0004      0.0001
+Jednoosobova_SRO                0.0201     0.0075     2.6884     0.0072      0.0055      0.0348
+Statny_vlastnik                -0.0098     0.0210    -0.4654     0.6416     -0.0510      0.0314
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0031
+Estimator:              RandomEffects   R-squared (Between):              0.0129
+No. Observations:               30859   R-squared (Within):              -0.0001
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0069
+Time:                        13:00:08   Log-likelihood                 1.124e+04
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      18.951
+Entities:                       73865   P-value                           0.0000
+Avg Obs:                       0.4178   Distribution:                 F(5,30853)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             22.293
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                 F(5,30853)
+Avg Obs:                       6171.8                                           
+Min Obs:                       5496.0                                           
+Max Obs:                       6698.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0809     0.0224     3.6163     0.0003      0.0371      0.1248
+Zahranicny_vlastnik_FDI        -0.0283     0.0041    -6.8422     0.0000     -0.0364     -0.0202
+Vlastnik_PO                    -0.0126     0.0048    -2.6398     0.0083     -0.0219     -0.0032
+Koncentracia_vlastnictva_t3    -0.0002     0.0002    -0.6827     0.4948     -0.0006      0.0003
+Jednoosobova_SRO                0.0148     0.0045     3.3191     0.0009      0.0061      0.0236
+Statny_vlastnik                -0.0105     0.0210    -0.4983     0.6183     -0.0517      0.0307
+===============================================================================================
+\ROA
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0055
+Estimator:              RandomEffects   R-squared (Between):              0.0158
+No. Observations:               33804   R-squared (Within):              -0.0003
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0086
+Time:                        13:00:09   Log-likelihood                 4.829e+04
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      37.697
+Entities:                       77458   P-value                           0.0000
+Avg Obs:                       0.4364   Distribution:                 F(5,33798)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             29.269
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                 F(5,33798)
+Avg Obs:                       6760.8                                           
+Min Obs:                       6100.0                                           
+Max Obs:                       7359.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0413     0.0023     18.247     0.0000      0.0369      0.0458
+Zahranicny_vlastnik_FDI        -0.0068     0.0013    -5.2267     0.0000     -0.0093     -0.0042
+Vlastnik_PO                    -0.0026     0.0022    -1.1827     0.2369     -0.0069      0.0017
+Koncentracia_vlastnictva_h3    -0.0002  3.895e-05    -4.7440     0.0000     -0.0003     -0.0001
+Jednoosobova_SRO                0.0107     0.0024     4.4694     0.0000      0.0060      0.0153
+Statny_vlastnik                -0.0034     0.0069    -0.4944     0.6210     -0.0169      0.0101
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0049
+Estimator:              RandomEffects   R-squared (Between):              0.0137
+No. Observations:               33804   R-squared (Within):              -0.0003
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0073
+Time:                        13:00:09   Log-likelihood                 4.828e+04
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      33.360
+Entities:                       77458   P-value                           0.0000
+Avg Obs:                       0.4364   Distribution:                 F(5,33798)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             24.936
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                 F(5,33798)
+Avg Obs:                       6760.8                                           
+Min Obs:                       6100.0                                           
+Max Obs:                       7359.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0395     0.0072     5.4714     0.0000      0.0254      0.0537
+Zahranicny_vlastnik_FDI        -0.0064     0.0013    -4.9156     0.0000     -0.0089     -0.0038
+Vlastnik_PO                    -0.0099     0.0015    -6.5757     0.0000     -0.0129     -0.0070
+Koncentracia_vlastnictva_t3 -7.863e-05  7.452e-05    -1.0552     0.2913     -0.0002   6.742e-05
+Jednoosobova_SRO                0.0018     0.0014     1.2571     0.2087     -0.0010      0.0046
+Statny_vlastnik                -0.0041     0.0069    -0.6028     0.5466     -0.0176      0.0093
+===============================================================================================
+
+                                         Analyzing section M 
+
+
+ROE
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0025
+Estimator:              RandomEffects   R-squared (Between):              0.0042
+No. Observations:               35645   R-squared (Within):           -6.541e-05
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0018
+Time:                        13:00:10   Log-likelihood                    6857.8
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      17.946
+Entities:                       73890   P-value                           0.0000
+Avg Obs:                       0.4824   Distribution:                 F(5,35639)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             7.6418
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                 F(5,35639)
+Avg Obs:                       7129.0                                           
+Min Obs:                       6354.0                                           
+Max Obs:                       7822.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.1551     0.0085     18.319     0.0000      0.1385      0.1717
+Zahranicny_vlastnik_FDI        -0.0267     0.0064    -4.1652     0.0000     -0.0393     -0.0142
+Vlastnik_PO                    -0.0013     0.0083    -0.1513     0.8798     -0.0175      0.0150
+Koncentracia_vlastnictva_h3    -0.0003     0.0002    -2.0405     0.0413     -0.0006  -1.245e-05
+Jednoosobova_SRO                0.0162     0.0087     1.8480     0.0646     -0.0010      0.0333
+Statny_vlastnik                -0.0405     0.0495    -0.8199     0.4123     -0.1375      0.0564
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0024
+Estimator:              RandomEffects   R-squared (Between):              0.0039
+No. Observations:               35645   R-squared (Within):           -8.452e-05
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0016
+Time:                        13:00:11   Log-likelihood                    6857.4
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      17.176
+Entities:                       73890   P-value                           0.0000
+Avg Obs:                       0.4824   Distribution:                 F(5,35639)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             6.8716
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                 F(5,35639)
+Avg Obs:                       7129.0                                           
+Min Obs:                       6354.0                                           
+Max Obs:                       7822.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.1569     0.0311     5.0374     0.0000      0.0958      0.2179
+Zahranicny_vlastnik_FDI        -0.0269     0.0064    -4.1890     0.0000     -0.0395     -0.0143
+Vlastnik_PO                    -0.0124     0.0061    -2.0305     0.0423     -0.0243     -0.0004
+Koncentracia_vlastnictva_t3    -0.0002     0.0003    -0.5684     0.5698     -0.0008      0.0004
+Jednoosobova_SRO                0.0009     0.0042     0.2171     0.8282     -0.0074      0.0092
+Statny_vlastnik                -0.0414     0.0495    -0.8366     0.4028     -0.1383      0.0556
+===============================================================================================
+\ROA
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0054
+Estimator:              RandomEffects   R-squared (Between):              0.0061
+No. Observations:               35057   R-squared (Within):              -0.0001
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0031
+Time:                        13:00:11   Log-likelihood                 3.689e+04
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      38.406
+Entities:                       77469   P-value                           0.0000
+Avg Obs:                       0.4525   Distribution:                 F(5,35051)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             11.674
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                 F(5,35051)
+Avg Obs:                       7011.4                                           
+Min Obs:                       6229.0                                           
+Max Obs:                       7621.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0763     0.0033     22.786     0.0000      0.0697      0.0828
+Zahranicny_vlastnik_FDI        -0.0080     0.0025    -3.2057     0.0013     -0.0129     -0.0031
+Vlastnik_PO                    -0.0020     0.0033    -0.6237     0.5328     -0.0084      0.0044
+Koncentracia_vlastnictva_h3    -0.0002  6.113e-05    -2.8458     0.0044     -0.0003  -5.415e-05
+Jednoosobova_SRO                0.0108     0.0035     3.1301     0.0017      0.0040      0.0176
+Statny_vlastnik                -0.0283     0.0208    -1.3560     0.1751     -0.0691      0.0126
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0052
+Estimator:              RandomEffects   R-squared (Between):              0.0055
+No. Observations:               35057   R-squared (Within):              -0.0002
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0027
+Time:                        13:00:12   Log-likelihood                 3.689e+04
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      36.814
+Entities:                       77469   P-value                           0.0000
+Avg Obs:                       0.4525   Distribution:                 F(5,35051)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             10.084
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                 F(5,35051)
+Avg Obs:                       7011.4                                           
+Min Obs:                       6229.0                                           
+Max Obs:                       7621.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0622     0.0125     4.9873     0.0000      0.0377      0.0866
+Zahranicny_vlastnik_FDI        -0.0080     0.0025    -3.1825     0.0015     -0.0129     -0.0031
+Vlastnik_PO                    -0.0085     0.0024    -3.5567     0.0004     -0.0132     -0.0038
+Koncentracia_vlastnictva_t3    5.5e-05     0.0001     0.4329     0.6651     -0.0002      0.0003
+Jednoosobova_SRO                0.0020     0.0017     1.2145     0.2246     -0.0013      0.0053
+Statny_vlastnik                -0.0288     0.0209    -1.3828     0.1667     -0.0697      0.0120
+===============================================================================================
+
+                                         Analyzing section N 
+
+
+ROE
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0042
+Estimator:              RandomEffects   R-squared (Between):              0.0065
+No. Observations:                7763   R-squared (Within):              -0.0001
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0046
+Time:                        13:00:12   Log-likelihood                    1606.9
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      6.5309
+Entities:                       73882   P-value                           0.0000
+Avg Obs:                       0.1051   Distribution:                  F(5,7757)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             2.8637
+                                        P-value                           0.0138
+Time periods:                       5   Distribution:                  F(5,7757)
+Avg Obs:                       1552.6                                           
+Min Obs:                       1346.0                                           
+Max Obs:                       1746.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.1554     0.0216     7.2022     0.0000      0.1131      0.1977
+Zahranicny_vlastnik_FDI        -0.0174     0.0126    -1.3765     0.1687     -0.0422      0.0074
+Vlastnik_PO                    -0.0012     0.0207    -0.0583     0.9535     -0.0418      0.0394
+Koncentracia_vlastnictva_h3     0.0001     0.0004     0.3448     0.7303     -0.0006      0.0009
+Jednoosobova_SRO               -0.0106     0.0215    -0.4901     0.6241     -0.0528      0.0317
+Statny_vlastnik                -0.1022     0.0289    -3.5360     0.0004     -0.1589     -0.0456
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0043
+Estimator:              RandomEffects   R-squared (Between):              0.0075
+No. Observations:                7763   R-squared (Within):              -0.0004
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0051
+Time:                        13:00:12   Log-likelihood                    1606.1
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      6.6996
+Entities:                       73882   P-value                           0.0000
+Avg Obs:                       0.1051   Distribution:                  F(5,7757)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             3.0320
+                                        P-value                           0.0097
+Time periods:                       5   Distribution:                  F(5,7757)
+Avg Obs:                       1552.6                                           
+Min Obs:                       1346.0                                           
+Max Obs:                       1746.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0720     0.0932     0.7726     0.4398     -0.1107      0.2547
+Zahranicny_vlastnik_FDI        -0.0170     0.0127    -1.3420     0.1796     -0.0418      0.0078
+Vlastnik_PO                     0.0028     0.0134     0.2114     0.8326     -0.0234      0.0290
+Koncentracia_vlastnictva_t3     0.0009     0.0009     0.9730     0.3306     -0.0009      0.0028
+Jednoosobova_SRO               -0.0054     0.0097    -0.5597     0.5757     -0.0243      0.0135
+Statny_vlastnik                -0.1015     0.0288    -3.5227     0.0004     -0.1580     -0.0450
+===============================================================================================
+\ROA
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0057
+Estimator:              RandomEffects   R-squared (Between):              0.0073
+No. Observations:                8059   R-squared (Within):             3.45e-05
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0041
+Time:                        13:00:13   Log-likelihood                    8871.1
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      9.3085
+Entities:                       77447   P-value                           0.0000
+Avg Obs:                       0.1041   Distribution:                  F(5,8053)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             3.4381
+                                        P-value                           0.0042
+Time periods:                       5   Distribution:                  F(5,8053)
+Avg Obs:                       1611.8                                           
+Min Obs:                       1396.0                                           
+Max Obs:                       1788.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0730     0.0076     9.5801     0.0000      0.0581      0.0879
+Zahranicny_vlastnik_FDI        -0.0063     0.0046    -1.3899     0.1646     -0.0153      0.0026
+Vlastnik_PO                    -0.0034     0.0074    -0.4634     0.6431     -0.0179      0.0111
+Koncentracia_vlastnictva_h3  5.557e-05     0.0001     0.3991     0.6898     -0.0002      0.0003
+Jednoosobova_SRO               -0.0035     0.0077    -0.4595     0.6459     -0.0186      0.0115
+Statny_vlastnik                -0.0378     0.0105    -3.6024     0.0003     -0.0583     -0.0172
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0062
+Estimator:              RandomEffects   R-squared (Between):              0.0096
+No. Observations:                8059   R-squared (Within):              -0.0002
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0050
+Time:                        13:00:13   Log-likelihood                    8870.1
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      10.011
+Entities:                       77447   P-value                           0.0000
+Avg Obs:                       0.1041   Distribution:                  F(5,8053)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             4.1420
+                                        P-value                           0.0009
+Time periods:                       5   Distribution:                  F(5,8053)
+Avg Obs:                       1611.8                                           
+Min Obs:                       1396.0                                           
+Max Obs:                       1788.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0178     0.0305     0.5825     0.5602     -0.0421      0.0776
+Zahranicny_vlastnik_FDI        -0.0060     0.0046    -1.3149     0.1886     -0.0150      0.0029
+Vlastnik_PO                    -0.0023     0.0048    -0.4762     0.6339     -0.0118      0.0072
+Koncentracia_vlastnictva_t3     0.0006     0.0003     1.9084     0.0564  -1.607e-05      0.0012
+Jednoosobova_SRO               -0.0020     0.0035    -0.5618     0.5742     -0.0088      0.0049
+Statny_vlastnik                -0.0375     0.0104    -3.5907     0.0003     -0.0579     -0.0170
+===============================================================================================
+
+                                         Analyzing section P 
+
+
+ROE
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                    -2.024e-05
+Estimator:              RandomEffects   R-squared (Between):              0.0008
+No. Observations:                2703   R-squared (Within):               0.0002
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0011
+Time:                        13:00:14   Log-likelihood                    150.85
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                     -0.0109
+Entities:                       73508   P-value                           1.0000
+Avg Obs:                       0.0368   Distribution:                  F(5,2697)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             0.3248
+                                        P-value                           0.8983
+Time periods:                       5   Distribution:                  F(5,2697)
+Avg Obs:                       540.60                                           
+Min Obs:                       470.00                                           
+Max Obs:                       615.00                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.1157     0.0327     3.5339     0.0004      0.0515      0.1798
+Zahranicny_vlastnik_FDI        -0.0338     0.0298    -1.1339     0.2569     -0.0922      0.0246
+Vlastnik_PO                    -0.0123     0.0310    -0.3981     0.6906     -0.0732      0.0485
+Koncentracia_vlastnictva_h3     0.0002     0.0006     0.2916     0.7706     -0.0010      0.0013
+Jednoosobova_SRO               -0.0082     0.0326    -0.2508     0.8020     -0.0721      0.0557
+Statny_vlastnik                -0.0546     0.2496    -0.2187     0.8269     -0.5440      0.4348
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0001
+Estimator:              RandomEffects   R-squared (Between):              0.0031
+No. Observations:                2703   R-squared (Within):              -0.0004
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0015
+Time:                        13:00:14   Log-likelihood                    149.93
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      0.0559
+Entities:                       73508   P-value                           0.9980
+Avg Obs:                       0.0368   Distribution:                  F(5,2697)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             0.3924
+                                        P-value                           0.8543
+Time periods:                       5   Distribution:                  F(5,2697)
+Avg Obs:                       540.60                                           
+Min Obs:                       470.00                                           
+Max Obs:                       615.00                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.2128     0.1369     1.5539     0.1203     -0.0557      0.4813
+Zahranicny_vlastnik_FDI        -0.0342     0.0298    -1.1485     0.2509     -0.0925      0.0242
+Vlastnik_PO                    -0.0050     0.0216    -0.2296     0.8184     -0.0472      0.0373
+Koncentracia_vlastnictva_t3    -0.0009     0.0014    -0.6469     0.5177     -0.0036      0.0018
+Jednoosobova_SRO                0.0019     0.0152     0.1268     0.8991     -0.0279      0.0317
+Statny_vlastnik                -0.0535     0.2496    -0.2145     0.8302     -0.5429      0.4359
+===============================================================================================
+\ROA
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0078
+Estimator:              RandomEffects   R-squared (Between):              0.0023
+No. Observations:                2789   R-squared (Within):               0.0012
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0025
+Time:                        13:00:15   Log-likelihood                    2633.4
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      4.3645
+Entities:                       77360   P-value                           0.0006
+Avg Obs:                       0.0361   Distribution:                  F(5,2783)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             1.0186
+                                        P-value                           0.4049
+Time periods:                       5   Distribution:                  F(5,2783)
+Avg Obs:                       557.80                                           
+Min Obs:                       489.00                                           
+Max Obs:                       639.00                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0702     0.0131     5.3543     0.0000      0.0445      0.0959
+Zahranicny_vlastnik_FDI        -0.0146     0.0120    -1.2191     0.2229     -0.0380      0.0089
+Vlastnik_PO                    -0.0152     0.0126    -1.2072     0.2274     -0.0399      0.0095
+Koncentracia_vlastnictva_h3  1.934e-05     0.0002     0.0804     0.9359     -0.0005      0.0005
+Jednoosobova_SRO               -0.0073     0.0131    -0.5567     0.5777     -0.0329      0.0184
+Statny_vlastnik                -0.0292     0.1020    -0.2861     0.7749     -0.2291      0.1707
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0079
+Estimator:              RandomEffects   R-squared (Between):              0.0013
+No. Observations:                2789   R-squared (Within):               0.0016
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0028
+Time:                        13:00:15   Log-likelihood                    2634.5
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      4.4463
+Entities:                       77360   P-value                           0.0005
+Avg Obs:                       0.0361   Distribution:                  F(5,2783)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             1.0969
+                                        P-value                           0.3599
+Time periods:                       5   Distribution:                  F(5,2783)
+Avg Obs:                       557.80                                           
+Min Obs:                       489.00                                           
+Max Obs:                       639.00                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0356     0.0562     0.6339     0.5262     -0.0746      0.1459
+Zahranicny_vlastnik_FDI        -0.0145     0.0120    -1.2103     0.2263     -0.0380      0.0090
+Vlastnik_PO                    -0.0151     0.0083    -1.8203     0.0688     -0.0313      0.0012
+Koncentracia_vlastnictva_t3     0.0004     0.0006     0.6342     0.5260     -0.0008      0.0015
+Jednoosobova_SRO               -0.0070     0.0058    -1.2019     0.2295     -0.0185      0.0044
+Statny_vlastnik                -0.0290     0.1019    -0.2849     0.7758     -0.2289      0.1708
+===============================================================================================
+
+                                         Analyzing section Q 
+
+
+ROE
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0675
+Estimator:              RandomEffects   R-squared (Between):              0.0920
+No. Observations:                5754   R-squared (Within):               0.0002
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0673
+Time:                        13:00:16   Log-likelihood                    981.78
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      83.251
+Entities:                       73704   P-value                           0.0000
+Avg Obs:                       0.0781   Distribution:                  F(5,5748)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             38.543
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                  F(5,5748)
+Avg Obs:                       1150.8                                           
+Min Obs:                       692.00                                           
+Max Obs:                       1546.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.2493     0.0237     10.502     0.0000      0.2028      0.2959
+Zahranicny_vlastnik_FDI        -0.1052     0.0445    -2.3639     0.0181     -0.1924     -0.0180
+Vlastnik_PO                    -0.1687     0.0265    -6.3725     0.0000     -0.2206     -0.1168
+Koncentracia_vlastnictva_h3     0.0013     0.0004     2.9090     0.0036      0.0004      0.0021
+Jednoosobova_SRO               -0.0227     0.0238    -0.9554     0.3394     -0.0693      0.0239
+Statny_vlastnik                -0.2061     0.0381    -5.4040     0.0000     -0.2809     -0.1313
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0697
+Estimator:              RandomEffects   R-squared (Between):              0.0959
+No. Observations:                5754   R-squared (Within):               0.0017
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0699
+Time:                        13:00:16   Log-likelihood                    986.03
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      86.167
+Entities:                       73704   P-value                           0.0000
+Avg Obs:                       0.0781   Distribution:                  F(5,5748)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             41.338
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                  F(5,5748)
+Avg Obs:                       1150.8                                           
+Min Obs:                       692.00                                           
+Max Obs:                       1546.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                          -0.0047     0.0690    -0.0683     0.9455     -0.1400      0.1305
+Zahranicny_vlastnik_FDI        -0.1081     0.0444    -2.4350     0.0149     -0.1951     -0.0211
+Vlastnik_PO                    -0.1317     0.0213    -6.1837     0.0000     -0.1734     -0.0899
+Koncentracia_vlastnictva_t3     0.0033     0.0007     4.6524     0.0000      0.0019      0.0047
+Jednoosobova_SRO                0.0297     0.0106     2.7948     0.0052      0.0089      0.0505
+Statny_vlastnik                -0.1949     0.0377    -5.1763     0.0000     -0.2687     -0.1211
+===============================================================================================
+\ROA
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0614
+Estimator:              RandomEffects   R-squared (Between):              0.0898
+No. Observations:                4635   R-squared (Within):              -0.0032
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0673
+Time:                        13:00:16   Log-likelihood                    4674.1
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      60.576
+Entities:                       77284   P-value                           0.0000
+Avg Obs:                       0.0600   Distribution:                  F(5,4629)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             29.445
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                  F(5,4629)
+Avg Obs:                       927.00                                           
+Min Obs:                       615.00                                           
+Max Obs:                       1192.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.1079     0.0102     10.615     0.0000      0.0879      0.1278
+Zahranicny_vlastnik_FDI        -0.0469     0.0170    -2.7651     0.0057     -0.0801     -0.0136
+Vlastnik_PO                    -0.0588     0.0111    -5.2979     0.0000     -0.0805     -0.0370
+Koncentracia_vlastnictva_h3     0.0004     0.0002     1.9912     0.0465   5.747e-06      0.0007
+Jednoosobova_SRO               -0.0091     0.0104    -0.8770     0.3805     -0.0294      0.0112
+Statny_vlastnik                -0.0840     0.0156    -5.3748     0.0000     -0.1147     -0.0534
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0637
+Estimator:              RandomEffects   R-squared (Between):              0.0941
+No. Observations:                4635   R-squared (Within):              -0.0020
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0700
+Time:                        13:00:16   Log-likelihood                    4676.1
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      62.946
+Entities:                       77284   P-value                           0.0000
+Avg Obs:                       0.0600   Distribution:                  F(5,4629)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             31.735
+                                        P-value                           0.0000
+Time periods:                       5   Distribution:                  F(5,4629)
+Avg Obs:                       927.00                                           
+Min Obs:                       615.00                                           
+Max Obs:                       1192.0                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0159     0.0293     0.5416     0.5881     -0.0416      0.0733
+Zahranicny_vlastnik_FDI        -0.0482     0.0169    -2.8526     0.0044     -0.0813     -0.0151
+Vlastnik_PO                    -0.0483     0.0088    -5.5177     0.0000     -0.0655     -0.0311
+Koncentracia_vlastnictva_t3     0.0011     0.0003     3.8124     0.0001      0.0006      0.0017
+Jednoosobova_SRO                0.0055     0.0048     1.1334     0.2571     -0.0040      0.0150
+Statny_vlastnik                -0.0815     0.0154    -5.2901     0.0000     -0.1118     -0.0513
+===============================================================================================
+
+                                         Analyzing section R 
+
+
+ROE
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0021
+Estimator:              RandomEffects   R-squared (Between):              0.0068
+No. Observations:                2080   R-squared (Within):               0.0003
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0031
+Time:                        13:00:17   Log-likelihood                    577.70
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      0.8832
+Entities:                       73744   P-value                           0.4914
+Avg Obs:                       0.0282   Distribution:                  F(5,2074)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             0.8584
+                                        P-value                           0.5083
+Time periods:                       5   Distribution:                  F(5,2074)
+Avg Obs:                       416.00                                           
+Min Obs:                       377.00                                           
+Max Obs:                       454.00                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0434     0.0303     1.4307     0.1527     -0.0161      0.1028
+Zahranicny_vlastnik_FDI        -0.0414     0.0373    -1.1099     0.2672     -0.1145      0.0317
+Vlastnik_PO                    -0.0471     0.0300    -1.5714     0.1162     -0.1060      0.0117
+Koncentracia_vlastnictva_h3     0.0005     0.0005     0.8396     0.4012     -0.0006      0.0015
+Jednoosobova_SRO               -0.0290     0.0318    -0.9128     0.3614     -0.0914      0.0334
+Statny_vlastnik                 0.0233     0.0312     0.7468     0.4552     -0.0378      0.0844
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0031
+Estimator:              RandomEffects   R-squared (Between):              0.0084
+No. Observations:                2080   R-squared (Within):               0.0007
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0054
+Time:                        13:00:17   Log-likelihood                    578.38
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      1.2850
+Entities:                       73744   P-value                           0.2675
+Avg Obs:                       0.0282   Distribution:                  F(5,2074)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             1.2602
+                                        P-value                           0.2785
+Time periods:                       5   Distribution:                  F(5,2074)
+Avg Obs:                       416.00                                           
+Min Obs:                       377.00                                           
+Max Obs:                       454.00                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.2773     0.1290     2.1490     0.0317      0.0242      0.5303
+Zahranicny_vlastnik_FDI        -0.0405     0.0372    -1.0866     0.2773     -0.1135      0.0326
+Vlastnik_PO                    -0.0232     0.0214    -1.0834     0.2787     -0.0651      0.0188
+Koncentracia_vlastnictva_t3    -0.0022     0.0013    -1.6458     0.1000     -0.0048      0.0004
+Jednoosobova_SRO               -0.0007     0.0181    -0.0375     0.9701     -0.0362      0.0348
+Statny_vlastnik                 0.0252     0.0310     0.8112     0.4174     -0.0357      0.0860
+===============================================================================================
+\ROA
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0091
+Estimator:              RandomEffects   R-squared (Between):              0.0126
+No. Observations:                2217   R-squared (Within):               0.0005
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0107
+Time:                        13:00:18   Log-likelihood                    2463.0
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      4.0466
+Entities:                       77385   P-value                           0.0012
+Avg Obs:                       0.0286   Distribution:                  F(5,2211)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             2.1820
+                                        P-value                           0.0536
+Time periods:                       5   Distribution:                  F(5,2211)
+Avg Obs:                       443.40                                           
+Min Obs:                       387.00                                           
+Max Obs:                       484.00                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0591     0.0114     5.1720     0.0000      0.0367      0.0815
+Zahranicny_vlastnik_FDI        -0.0045     0.0136    -0.3270     0.7437     -0.0312      0.0223
+Vlastnik_PO                    -0.0046     0.0113    -0.4060     0.6848     -0.0267      0.0176
+Koncentracia_vlastnictva_h3    -0.0003     0.0002    -1.2269     0.2200     -0.0007      0.0002
+Jednoosobova_SRO                0.0065     0.0121     0.5366     0.5916     -0.0173      0.0303
+Statny_vlastnik                -0.0146     0.0116    -1.2524     0.2106     -0.0374      0.0083
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0087
+Estimator:              RandomEffects   R-squared (Between):              0.0115
+No. Observations:                2217   R-squared (Within):               0.0005
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0099
+Time:                        13:00:18   Log-likelihood                    2463.1
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      3.8752
+Entities:                       77385   P-value                           0.0017
+Avg Obs:                       0.0286   Distribution:                  F(5,2211)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             2.0113
+                                        P-value                           0.0741
+Time periods:                       5   Distribution:                  F(5,2211)
+Avg Obs:                       443.40                                           
+Min Obs:                       387.00                                           
+Max Obs:                       484.00                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0849     0.0473     1.7955     0.0727     -0.0078      0.1777
+Zahranicny_vlastnik_FDI        -0.0038     0.0136    -0.2800     0.7795     -0.0306      0.0229
+Vlastnik_PO                    -0.0134     0.0080    -1.6730     0.0945     -0.0291      0.0023
+Koncentracia_vlastnictva_t3    -0.0004     0.0005    -0.8174     0.4138     -0.0013      0.0006
+Jednoosobova_SRO               -0.0049     0.0067    -0.7211     0.4709     -0.0181      0.0084
+Statny_vlastnik                -0.0162     0.0116    -1.3962     0.1628     -0.0389      0.0065
+===============================================================================================
+
+                                         Analyzing section S 
+
+
+ROE
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0052
+Estimator:              RandomEffects   R-squared (Between):              0.0187
+No. Observations:                1679   R-squared (Within):               0.0036
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0102
+Time:                        13:00:19   Log-likelihood                    353.24
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      1.7547
+Entities:                       73825   P-value                           0.1191
+Avg Obs:                       0.0227   Distribution:                  F(5,1673)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             2.5817
+                                        P-value                           0.0246
+Time periods:                       5   Distribution:                  F(5,1673)
+Avg Obs:                       335.80                                           
+Min Obs:                       288.00                                           
+Max Obs:                       368.00                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0381     0.0404     0.9410     0.3469     -0.0413      0.1174
+Zahranicny_vlastnik_FDI        -0.0477     0.0339    -1.4093     0.1589     -0.1141      0.0187
+Vlastnik_PO                     0.0189     0.0424     0.4455     0.6560     -0.0643      0.1021
+Koncentracia_vlastnictva_h3     0.0016     0.0008     2.0468     0.0408   6.585e-05      0.0031
+Jednoosobova_SRO               -0.0609     0.0437    -1.3937     0.1636     -0.1466      0.0248
+Statny_vlastnik                -0.2213     0.1047    -2.1125     0.0348     -0.4267     -0.0158
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROE   R-squared:                        0.0033
+Estimator:              RandomEffects   R-squared (Between):              0.0140
+No. Observations:                1679   R-squared (Within):               0.0025
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0083
+Time:                        13:00:19   Log-likelihood                    352.64
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      1.1087
+Entities:                       73825   P-value                           0.3537
+Avg Obs:                       0.0227   Distribution:                  F(5,1673)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             1.9320
+                                        P-value                           0.0861
+Time periods:                       5   Distribution:                  F(5,1673)
+Avg Obs:                       335.80                                           
+Min Obs:                       288.00                                           
+Max Obs:                       368.00                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                          -0.0134     0.1309    -0.1023     0.9185     -0.2701      0.2433
+Zahranicny_vlastnik_FDI        -0.0488     0.0339    -1.4378     0.1507     -0.1154      0.0178
+Vlastnik_PO                     0.0735     0.0323     2.2779     0.0229      0.0102      0.1368
+Koncentracia_vlastnictva_t3     0.0013     0.0013     0.9858     0.3244     -0.0013      0.0040
+Jednoosobova_SRO                0.0154     0.0196     0.7878     0.4310     -0.0230      0.0538
+Statny_vlastnik                -0.2140     0.1049    -2.0391     0.0416     -0.4198     -0.0082
+===============================================================================================
+\ROA
+
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_h3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0122
+Estimator:              RandomEffects   R-squared (Between):              0.0185
+No. Observations:                1669   R-squared (Within):           -2.421e-06
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0077
+Time:                        13:00:20   Log-likelihood                    1799.3
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      4.1174
+Entities:                       77405   P-value                           0.0010
+Avg Obs:                       0.0216   Distribution:                  F(5,1663)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             1.6735
+                                        P-value                           0.1378
+Time periods:                       5   Distribution:                  F(5,1663)
+Avg Obs:                       333.80                                           
+Min Obs:                       290.00                                           
+Max Obs:                       376.00                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0457     0.0158     2.9035     0.0037      0.0148      0.0766
+Zahranicny_vlastnik_FDI        -0.0056     0.0131    -0.4289     0.6680     -0.0313      0.0201
+Vlastnik_PO                    -0.0180     0.0169    -1.0650     0.2870     -0.0511      0.0151
+Koncentracia_vlastnictva_h3     0.0004     0.0003     1.3847     0.1663     -0.0002      0.0010
+Jednoosobova_SRO               -0.0067     0.0172    -0.3907     0.6961     -0.0404      0.0270
+Statny_vlastnik                -0.0203     0.0396    -0.5128     0.6082     -0.0979      0.0573
+===============================================================================================
+Zahranicny_vlastnik_FDI + Koncentracia_vlastnictva_t3
+                        RandomEffects Estimation Summary                        
+================================================================================
+Dep. Variable:                    ROA   R-squared:                        0.0120
+Estimator:              RandomEffects   R-squared (Between):              0.0168
+No. Observations:                1669   R-squared (Within):           -6.422e-06
+Date:                Sun, Mar 13 2022   R-squared (Overall):              0.0083
+Time:                        13:00:20   Log-likelihood                    1799.6
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      4.0511
+Entities:                       77405   P-value                           0.0012
+Avg Obs:                       0.0216   Distribution:                  F(5,1663)
+Min Obs:                       0.0000                                           
+Max Obs:                       5.0000   F-statistic (robust):             1.6073
+                                        P-value                           0.1549
+Time periods:                       5   Distribution:                  F(5,1663)
+Avg Obs:                       333.80                                           
+Min Obs:                       290.00                                           
+Max Obs:                       376.00                                           
+                                                                                
+                                      Parameter Estimates                                      
+===============================================================================================
+                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------
+const                           0.0021     0.0509     0.0417     0.9667     -0.0977      0.1020
+Zahranicny_vlastnik_FDI        -0.0054     0.0131    -0.4089     0.6827     -0.0310      0.0203
+Vlastnik_PO                    -0.0032     0.0124    -0.2534     0.8000     -0.0276      0.0213
+Koncentracia_vlastnictva_t3     0.0007     0.0005     1.2638     0.2065     -0.0004      0.0017
+Jednoosobova_SRO                0.0129     0.0075     1.7243     0.0848     -0.0018      0.0275
+Statny_vlastnik                -0.0194     0.0396    -0.4901     0.6241     -0.0970      0.0582
+===============================================================================================
