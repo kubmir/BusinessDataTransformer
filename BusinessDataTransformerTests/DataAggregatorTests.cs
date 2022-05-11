@@ -48,7 +48,7 @@ namespace BusinessDataTransformerTests
                 CountryOfOwner = "Czech republic",
                 OwnerCountrySign = "DOM",
                 OwnerType = "FO",
-                OwnerShare = "50",
+                OwnerShare = 50,
                 IsValid = "1",
             };
 
@@ -59,12 +59,12 @@ namespace BusinessDataTransformerTests
                 CountryOfOwner = "USA",
                 OwnerCountrySign = "FOR",
                 OwnerType = "FO",
-                OwnerShare = "50",
+                OwnerShare = 50,
                 IsValid = "1",
             };
 
             var dataAggregator = new DataAggregator();
-            var result = dataAggregator.AggregateDataByCompany(inputBusinessItems);
+            var result = dataAggregator.AggregateDataByCompany(inputBusinessItems, new List<FinancialResultsDataItem>());
 
             Assert.AreEqual(1, result.Count);
             Assert.AreEqual("123", result[0].ICO);
@@ -130,7 +130,7 @@ namespace BusinessDataTransformerTests
                 CountryOfOwner = "Czech republic",
                 OwnerCountrySign = "DOM",
                 OwnerType = "FO",
-                OwnerShare = "50",
+                OwnerShare = 50,
                 IsValid = "1",
             };
 
@@ -141,12 +141,12 @@ namespace BusinessDataTransformerTests
                 CountryOfOwner = "USA",
                 OwnerCountrySign = "FOR",
                 OwnerType = "FO",
-                OwnerShare = "50",
+                OwnerShare = 50,
                 IsValid = "1",
             };
 
             var dataAggregator = new DataAggregator();
-            var result = dataAggregator.AggregateDataByCompany(inputBusinessItems);
+            var result = dataAggregator.AggregateDataByCompany(inputBusinessItems, new List<FinancialResultsDataItem>());
 
             Assert.AreEqual(1, result.Count);
             Assert.AreEqual("123", result[0].ICO);
